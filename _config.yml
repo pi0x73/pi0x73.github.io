@@ -270,3 +270,6 @@ defaults:
       comments: false
       share: false
       related: true
+
+# Site Search
+search: true
