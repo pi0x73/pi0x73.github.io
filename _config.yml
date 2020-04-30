@@ -101,7 +101,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Suljot"
+  name             : "Suljot Gjoka"
   avatar           : "/assets/images/logo.jpg"
   bio              : "Security Researcher<br>Red Teamer & CTF Player"
   location         : "Albania"
@@ -266,7 +266,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: false
+      read_time: true
       comments: false
       share: false
       related: true
