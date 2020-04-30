@@ -1,12 +1,8 @@
 ---
 layout: single
 title: Traverxec - Hack The Box
-excerpt: "Sometimes you need a break from the hard boxes that take forever to pwn. Traverxec is an easy box that start with a custom vulnerable webserver with an unauthenticated RCE  that we exploit to land an initial shell. After pivoting to another user by finding his SSH private key and cracking it, we get root through the less pager invoked by journalctl running as root through sudo."
+excerpt: "Traverxec is an easy box from HackTheBox platform that starts with an easy RCE through an outdated nostromo service, We are able to get a backup of ssh set of keys and login as user. User can simply run a command as sudo which we can exploit through less pager."
 date: 2020-04-11
-classes: wide
-header:
-  teaser: /assets/images/traverxec-walkthrough/traverxec.png
-  teaser_home_page: true
 categories:
   - hackthebox
   - infosec
