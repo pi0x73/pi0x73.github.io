@@ -273,3 +273,6 @@ defaults:
 
 # Site Search
 search: true
+
+# Table of Contents
+toc : true
