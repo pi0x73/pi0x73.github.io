@@ -4,9 +4,6 @@ title: Traverxec - Hack The Box
 excerpt: "Traverxec is an easy box from HackTheBox platform that starts with an easy RCE through an outdated nostromo service, We are able to get a backup of ssh set of keys and login as user. User can simply run a command as sudo which we can exploit through less pager."
 date: 2020-04-11
 toc: true
-toc_label: "Table of Contents"
-toc_icon: "cog"
-
 categories:
   - hackthebox
   - infosec
