@@ -47,7 +47,15 @@ Before even trying to enumerate the webpage , We can notice “nostromo 1.9.6”
 
 I made a quick research of the mentioned service running on the webpage and ended up with the
 following results :
-![searchsploit](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/traverxec-walkthrough/t2.png)
+```
+root@kali:~# searchsploit "nostromo 1.9.6"
+--------------------------------------- ----------------------------------------
+ Exploit Title                         |  Path
+                                       | (/usr/share/exploitdb/)
+--------------------------------------- ----------------------------------------
+nostromo 1.9.6 - Remote Code Execution | exploits/multiple/remote/47837.py
+--------------------------------------- ----------------------------------------
+```
 
 - Command Execution… 
 
