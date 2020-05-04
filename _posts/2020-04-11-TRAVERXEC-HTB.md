@@ -19,9 +19,24 @@ tags:
 
 ## Enumeration
 
-### NMAP:
+We start by doing a nmap scan which gives the following results :
+```Starting Nmap 7.80 ( https://nmap.org ) at 2019-12-21 04:12 EST
+Nmap scan report for traverxec.htb (10.10.10.165)
+Host is up (0.26s latency).
+Not shown: 998 filtered ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 aa:99:a8:16:68:cd:41:cc:f9:6c:84:01:c7:59:09:5c (RSA)
+|   256 93:dd:1a:23:ee:d7:1f:08:6b:58:47:09:73:a3:88:cc (ECDSA)
+|_  256 9d:d6:62:1e:7a:fb:8f:56:92:e6:37:f1:10:db:9b:ce (ED25519)
+80/tcp open  http    nostromo 1.9.6
+|_http-server-header: nostromo 1.9.6
+|_http-title: TRAVERXEC
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
-![nmap](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/traverxec-walkthrough/t1.png)
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 32.82 seconds```
 
 We have 2 ports opened from the initial scan : 22 (SSH) , 80 (HTTP) …                                                            
 Before even trying to enumerate the webpage , We can notice “nostromo 1.9.6” running on port 80.                                  
