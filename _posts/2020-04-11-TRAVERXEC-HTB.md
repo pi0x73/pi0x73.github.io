@@ -21,7 +21,7 @@ tags:
 
 We start by doing a nmap scan which gives the following results :
 
-```
+```bash
 Starting Nmap 7.80 ( https://nmap.org ) at 2019-12-21 04:12 EST
 Nmap scan report for traverxec.htb (10.10.10.165)
 Host is up (0.26s latency).
