@@ -3,6 +3,10 @@ layout: single
 title: Stripes - Vulnhub
 excerpt: "I made a little break from HTB to try out a boot2root machine that a friend of me recently released on Vulnhub. Stripe is a easy to medium linux machine with a little OSINT in the beggining and pretty interesting."
 date: 2020-04-24
+header:
+  teaser: /assets/images/Stripe-Vulnhub/vulnhub.png
+  teaser_home_page: true
+toc: true
 categories:
   - vulnhub
   - infosec
