@@ -7,7 +7,7 @@ header:
   teaser: /assets/images/traverxec-walkthrough/traverxec.png
   teaser_home_page: true
 classes: 
-  -landing
+  - landing
 categories:
   - hackthebox
   - infosec
