@@ -1,7 +1,7 @@
 ---
 layout: single
-title: Traverxec - Hack The Box
-excerpt: "Walkthrough for Traverxec Machine from HackTheBox"
+title: Hack The Box Write-up #1 : Traverxec
+excerpt: "My walkthrough of Traverxec Machine from HackTheBox"
 date: 2020-04-11
 header:
   teaser: /assets/images/traverxec-walkthrough/traverxec.png
