@@ -21,8 +21,9 @@ tags:
 
 We start by doing a nmap scan which gives the following results :
 
-
-`Starting Nmap 7.80 ( https://nmap.org ) at 2019-12-21 04:12 EST
+-
+```
+Starting Nmap 7.80 ( https://nmap.org ) at 2019-12-21 04:12 EST
 Nmap scan report for traverxec.htb (10.10.10.165)
 Host is up (0.26s latency).
 Not shown: 998 filtered ports
@@ -39,13 +40,13 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 32.82 seconds
-`
+```
 
 We have 2 ports opened from the initial scan : 22 (SSH) , 80 (HTTP) …                                                            
 Before even trying to enumerate the webpage , We can notice “nostromo 1.9.6” running on port 80.                                  
 
 I made a quick research of the mentioned service running on the webpage and ended up with the
-following results :`
+following results :```
 root@kali:~# searchsploit "nostromo 1.9.6"
 --------------------------------------- ----------------------------------------
  Exploit Title                         |  Path
