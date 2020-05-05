@@ -21,7 +21,7 @@ tags:
 
 We start by doing a nmap scan which gives the following results :
 
--
+
 ```
 Starting Nmap 7.80 ( https://nmap.org ) at 2019-12-21 04:12 EST
 Nmap scan report for traverxec.htb (10.10.10.165)
@@ -46,7 +46,8 @@ We have 2 ports opened from the initial scan : 22 (SSH) , 80 (HTTP) …
 Before even trying to enumerate the webpage , We can notice “nostromo 1.9.6” running on port 80.                                  
 
 I made a quick research of the mentioned service running on the webpage and ended up with the
-following results :```
+following results :
+```
 root@kali:~# searchsploit "nostromo 1.9.6"
 --------------------------------------- ----------------------------------------
  Exploit Title                         |  Path
