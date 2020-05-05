@@ -265,7 +265,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: true
       share: true
@@ -273,6 +273,3 @@ defaults:
 
 # Site Search
 search: true
-
-# Table of Contents
-toc : true
