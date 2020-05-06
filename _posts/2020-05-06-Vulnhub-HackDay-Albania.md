@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "Vulnhub Write-up #1 : Stripes"
-excerpt: "Writeup for my first ever vulnhub machine."
-date: 2020-04-24
+title: "Vulnhub Write-up #1 : HackDay-Albania"
+excerpt: "Writeup for 'HackDay-Albania' machine from vulnhub."
+date: 2020-05-06
 header:
   teaser: /assets/images/Stripe-Vulnhub/vulnhub.png
   teaser_home_page: true
@@ -11,9 +11,9 @@ categories:
   - vulnhub
   - infosec
 tags:
-  - busctl  
-  - wordpress
-  - restricted-shell
+  - sqli  
+  - auth-bypass
+  - write-perm
 ---
 
 ![card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/Stripe-Vulnhub/vulnhub.png)
