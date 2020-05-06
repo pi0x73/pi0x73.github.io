@@ -17,7 +17,6 @@ tags:
 ---
 
 
-![card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/Stripe-Vulnhub/vulnhub.png)
 
 I made a little break from HTB to try out a boot2root machine that a friend of me recently released on Vulnhub. Stripe is a easy to medium linux machine with a little OSINT in the beggining and escalating to user by first escaping a shell. The second user is allowed to run a sudo command which gives us root access...
 
