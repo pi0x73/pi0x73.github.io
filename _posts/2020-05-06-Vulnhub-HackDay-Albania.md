@@ -82,10 +82,14 @@ After some attempts `/unisxcudkqjydw/` returns with the following message :
 
 ``IS there any /vulnbank/ in there ??? ``
 
+## Initial Foothold
+
 I tried to navigate to ``/unisxcudkqjydw/vulnbank`` and it seemed like it was a valid directory with content on it :
+
 ![dir](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/HackDay-Vulnhub/3.png)
 
 Accessing ``client/`` shows the following site :
+
 ![client](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/HackDay-Vulnhub/4.png)
 
 A login page which is probably vulnerable to sql injection , however the usual manual injections didnt work so I decided to fire sqlmap against it :
@@ -120,9 +124,12 @@ root@kali:~# cp /usr/share/webshells/php/php-reverse-shell.php shelltest.jpg
 ```
 
 After clicking `View Ticket` in the main page I finally got a response :
+
 ![site](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/HackDay-Vulnhub/8.png)
 
 Finally a reverse shell as `www-data` 
+
+## Escalating to User
 I quickly located the bank files in machine and went through config.php to see for a possible password reuse somewhere :
 
 ![site](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/HackDay-Vulnhub/9.png)
@@ -164,6 +171,7 @@ Now I can simply try to su as taviso using the password we set :
 And ... we are in as Taviso!
 
 
+## Root Privesc
 The first basic enumeration for the next privesc ``sudo -l`` gave me enough to do the next step : 
 
 ```
