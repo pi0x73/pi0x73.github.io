@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Vulnhub Write-up #1 : HackDay-Albania"
+title: "Vulnhub Write-up #2 : HackDay-Albania"
 excerpt: "Writeup for 'HackDay-Albania' machine from vulnhub."
 date: 2020-05-06
 header:
