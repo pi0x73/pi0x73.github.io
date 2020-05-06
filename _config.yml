@@ -131,7 +131,7 @@ author:
   weibo            :
   xing             :
   youtube          : # "https://youtube.com/c/MichaelRoseDesign"
-  image            : /assets/images/image.png
+  image            : "/assets/images/image.png"
 
 # Reading Files
 include:
