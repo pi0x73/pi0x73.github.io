@@ -16,7 +16,6 @@ tags:
   - write-perm
 ---
 
-![card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/Stripe-Vulnhub/vulnhub.png)
 
 In this writeup we are looking at HackDay-Albania from Vulnhub.
 I spent time to complete this VM as it took my atention as the first Albanian VM I have ever seen since I am an albanian too and would be interested to take a look. This machine has quite an interesting walkthrough with beginner to intermediate level steps.
@@ -63,7 +62,9 @@ Port 22 (SSH) and Port 8008 (HTTP) opened...
 The HTTP Server comes up with a bunch of random word directories which seem weird to me.
 
 I firstly tried to navigate to the HTTP server and look for something around : 
+
 ![message](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/HackDay-Vulnhub/1.png)
+
 This is the image presented in the root page alongside with a message written in Albania language which means :
 
 `If it's me, I know where to go ;)`
