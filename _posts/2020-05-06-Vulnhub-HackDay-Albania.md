@@ -6,6 +6,7 @@ date: 2020-05-06
 header:
   teaser: /assets/images/Stripe-Vulnhub/vulnhub.png
   teaser_home_page: true
+classes: wide
 categories:
   - vulnhub
   - infosec
