@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "Suljot Gjoka"
   avatar           : "/assets/images/logo.jpg"
-  bio              : "Security Researcher, Student & CTF (Capture The Flag)<br>ADDICT!<br><br>Proudly a Member of zer0byte.<br>“Pop a shell before it's too late!”"
+  bio              : "Security Researcher, Student & CTF (Capture The Flag)<br>ADDICT!"
   location         : "Albania"
   email            : "suljotgjokaaa@gmail.com"
   uri              :
