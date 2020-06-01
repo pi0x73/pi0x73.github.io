@@ -4,7 +4,6 @@ permalink: /about/
 layout : single
 author_profile: true
 ---
-## Who AM I?
 19 years old pentester, cybersec and technology enthusiast , deep house music addict!
 I show my interest in Web Application pentesting and Active Directory Attacks.
 I play CTF events , do security researches , study articles and learn new things...
