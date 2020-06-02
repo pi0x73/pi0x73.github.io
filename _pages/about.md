@@ -10,7 +10,8 @@ Open to any job opportunities related to cybersecurity & infosec.
 
 
 ## Profiles & References
-HackTheBox [https://www.hackthebox.eu/profile/111862](https://www.hackthebox.eu/profile/111862) 
+HackTheBox [https://www.hackthebox.eu/profile/111862](https://www.hackthebox.eu/profile/111862)  
 Github [https://github.com/pi0x73](https://github.com/pi0x73)  
 Linkedin [https://www.linkedin.com/in/suljotgjoka/](https://www.linkedin.com/in/suljotgjoka/)  
+
 
