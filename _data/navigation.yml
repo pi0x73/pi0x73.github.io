@@ -1,7 +1,7 @@
 main:
  # - title: "Home"
   #  url: /
-  - title: "Posts"
+ # - title: "Posts"
     url: /archive/
  # - title: "Categories"
  #   url: /categories/
