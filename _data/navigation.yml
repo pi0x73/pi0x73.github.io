@@ -1,8 +1,8 @@
 main:
  # - title: "Home"
-  #  url: /
+ #  url: /
  # - title: "Posts"
-    url: /archive/
+ #   url: /archive/
  # - title: "Categories"
  #   url: /categories/
  # - title: "Tags"
