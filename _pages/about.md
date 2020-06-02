@@ -2,13 +2,14 @@
 title: "About Me"
 permalink: /about/
 layout : single
-author_profile: true
 ---
-19 years old pentester, cybersec and technology enthusiast , deep house music addict!
-I show my interest in Web Application pentesting and Active Directory Attacks.
-I play CTF events , do security researches , study articles and learn new things...
-I use this blog to share my walkthroughs and findings.
 
-TOP 1 Ranked for Albania in HackTheBox , around TOP 20 globaly .
+student, researcher, pentester , blogger.
+I use this blog as a personal portfolio , archive my achievements and share blogs and walkthroughs that I find interesting.
+Open to any job opportunities related to cybersecurity & infosec.
 
-![card](https://www.hackthebox.eu/badge/image/111862)
+
+## Profiles & References
+HackTheBox(https://www.hackthebox.eu/profile/111862)
+Github(https://github.com/pi0x73)
+Linkedin(https://www.linkedin.com/in/suljotgjoka/)
