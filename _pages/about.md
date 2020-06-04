@@ -15,7 +15,7 @@ Github [https://github.com/pi0x73](https://github.com/pi0x73)
 Linkedin [https://www.linkedin.com/in/suljotgjoka/](https://www.linkedin.com/in/suljotgjoka/)  
 
 ## Contact
-mailto:suljotgjokaaa@gmail.com
+[contact](mailto:suljotgjokaaa@gmail.com)
 
 ## Support 
 This blog is created in partnership with 0 ads!  
