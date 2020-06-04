@@ -4,7 +4,7 @@ permalink: /about/
 layout : single
 ---
 
-student, researcher, pentester , blogger.  
+student, researcher, developer(C/C++ , Python , JavaScript), pentester , blogger.  
 I use this blog as a personal portfolio , archive my achievements and share blogs and walkthroughs that I find interesting.  
 Open to any job opportunities related to cybersecurity & infosec.
 
