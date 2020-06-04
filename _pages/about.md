@@ -20,7 +20,7 @@ HackTheBox is an online hacking/learning platform with over 300,000 users curren
 I usually spend time testing my skills through their challenges and vulnerable machines.  
 My highest ranking worldwide was 9th in 2020 May :  
 
-![ranking](https://github.com/pi0x73/pi0x73.github.io/assets/images/ranking.jfif)
+![ranking](https://github.com/pi0x73/pi0x73.github.io/assets/images/ranking.jpg)
 
 ## Contact
 [suljotgjokaaa@gmail.com](mailto:suljotgjokaaa@gmail.com)
