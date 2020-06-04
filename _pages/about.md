@@ -3,8 +3,11 @@ title: "About Me"
 permalink: /about/
 layout : single
 ---
+## Whoami
+student, researcher, developer (C/C++ , Python , JavaScript), pentester , blogger.  
+usually participate in competitions and CTFs about cybersecurity.
 
-student, researcher, developer(C/C++ , Python , JavaScript), pentester , blogger.  
+## Blog Overwiew
 I use this blog as a personal portfolio , archive my achievements and share blogs and walkthroughs that I find interesting.  
 Open to any job opportunities related to cybersecurity & infosec.
 
