@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Vulnhub Write-up #1 : Stripes"
-excerpt: "Writeup for my first ever vulnhub machine."
+excerpt: "Stripe is a easy to medium linux machine with a little OSINT in the beggining and escalating to user by first escaping a shell. The second user is allowed to run a sudo command which gives us root access..."
 date: 2020-04-24
 header:
   teaser: /assets/images/Stripe-Vulnhub/vulnhub.png
