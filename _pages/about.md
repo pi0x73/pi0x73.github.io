@@ -16,7 +16,7 @@ Github [https://github.com/pi0x73](https://github.com/pi0x73)
 Linkedin [https://www.linkedin.com/in/suljotgjoka/](https://www.linkedin.com/in/suljotgjoka/)  
 
 #### HackTheBox
-HackTheBox is an online hacking/learning platform with over 300,000 users currently and still counting.
+[HTB](https://hackthebox.eu/register) is an online hacking/learning platform with over 300,000 users currently and still counting.
 I usually spend time testing my skills through their challenges and vulnerable machines.  
 My highest ranking worldwide was 9th in 2020 May :  
 
