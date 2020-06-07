@@ -130,9 +130,7 @@ gbyolo:x:1000:1000::/home/gbyolo:/bin/bash
 aand... as we see we were able to read ``/etc/passwd`` from the remote machine which means our attack was succesful and this way we can read any file in the remote machine like : ssh keys or possible config files to help us identify and gather more information of the machine for further exploitation.
 
 I learned a new kind of attack while completing this machine and I hope this article helps you somehow learn something new.  
-
-
-
+Any feedback or suggestion is appreciated!  
 
 
 
