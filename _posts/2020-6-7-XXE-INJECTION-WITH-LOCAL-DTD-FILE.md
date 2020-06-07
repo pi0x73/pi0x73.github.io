@@ -134,4 +134,5 @@ I learned a new kind of attack while completing this machine and I hope this art
 
 Do you like my work?  
 
-{ % include support.html % }
+{% include support.html %}
+
