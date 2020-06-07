@@ -39,8 +39,7 @@ Lately I came through an interesting machine in HackTheBox (Patents) which repre
 
 My first thought when I saw I could upload ``.docx`` files was that I could possibly inject macro code or usual injections to have a possible ``Remote Command Execution`` to the server but as expected it wasn't meant to be that easy, so I started to dig in more in Google to find new possibilities of injection attacks through ``.docx`` files.
 
-While searching I came accross [PortSwigger](https://portswigger.net/web-security/xxe)   
-which helped me the most to understand the basics of a XXE attack , how it works and how its done...  
+While searching I came accross [PortSwigger](https://portswigger.net/web-security/xxe) which helped me the most to understand the basics of a XXE attack , how it works and how its done...  
 
 Later I could use [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection) to test some payloads in the remote server and see if it could work.
 
