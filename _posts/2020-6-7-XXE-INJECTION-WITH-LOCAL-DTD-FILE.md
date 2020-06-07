@@ -15,7 +15,7 @@ tags:
   - file-read
 ---
 
-In this short article I'm going to make a short explaination of the XXE injection, how it works and how it can be used into any vulnerable app using a local DTD file.
+In this short article I'm going to make a short explaination of the XXE injection, how it works and how it can be used into any vulnerable app to retrieve files from the remote server using a local DTD file.
 
 First lets take a look from an usual dummy paragraph of what a XXE injection is...
 
@@ -34,12 +34,13 @@ There are various types of XXE attacks:
 - Exploiting blind XXE exfiltrate data out-of-band, where sensitive data is transmitted from the application server to a system that the   attacker controls.
 - Exploiting blind XXE to retrieve data via error messages, where the attacker can trigger a parsing error message containing sensitive   data.
 
-In this article I'm going to explain how we can retrieve files from the system through a vulnerable doc-upload web application.
+## Retrieve Files through XXE
+
 Lately I came through an interesting machine in HackTheBox (Patents) which represented a simple website with an upload form where I could upload docx files to the web server.
 
-My first thought when I saw I could upload ``.docx`` files was that I could possibly inject macro code or usual injections to have a possible ``Remote Command Execution`` to the server but as expected it wasn't meant to be that easy, so I started to dig in more in Google to find new possibilities of injection attacks through .docx files.
+My first thought when I saw I could upload ``.docx`` files was that I could possibly inject macro code or usual injections to have a possible ``Remote Command Execution`` to the server but as expected it wasn't meant to be that easy, so I started to dig in more in Google to find new possibilities of injection attacks through ``.docx`` files.
 
-While searching a came accross https://portswigger.net/web-security/xxe which helped me the most to understand the basics of a XXE attack and later I could use https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection to test some payloads in the remote server and see if it could work.
+While searching I came accross https://portswigger.net/web-security/xxe which helped me the most to understand the basics of a XXE attack and later I could use https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection to test some payloads in the remote server and see if it could work.
 
 ## Exploitation 
 First I went to https://docs.google.com/ to create a .docx and download it to my machine to make further edits to it and inject some XML code.
