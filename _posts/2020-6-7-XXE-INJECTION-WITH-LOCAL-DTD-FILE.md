@@ -40,10 +40,13 @@ Lately I came through an interesting machine in HackTheBox (Patents) which repre
 
 My first thought when I saw I could upload ``.docx`` files was that I could possibly inject macro code or usual injections to have a possible ``Remote Command Execution`` to the server but as expected it wasn't meant to be that easy, so I started to dig in more in Google to find new possibilities of injection attacks through ``.docx`` files.
 
-While searching I came accross https://portswigger.net/web-security/xxe which helped me the most to understand the basics of a XXE attack and later I could use https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection to test some payloads in the remote server and see if it could work.
+While searching I came accross [PortSwigger](https://portswigger.net/web-security/xxe)   
+which helped me the most to understand the basics of a XXE attack , how it works and how its done...  
+
+Later I could use [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection) to test some payloads in the remote server and see if it could work.
 
 ## Exploitation 
-First I went to https://docs.google.com/ to create a .docx and download it to my machine to make further edits to it and inject some XML code.
+First I went to [Google Docs](https://docs.google.com/) to create a ``.docx`` and download it to my machine to make further edits to it and inject some XML code.
 
 ![docs](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/xxe-injection/xxe1.PNG)
 
@@ -79,7 +82,7 @@ So first I created the folder and used a payload from [PayloadAllTheThings](http
 
 where ``10.10.x.x`` is our ip.
 
-We can easily tell from the code that the ``item1.xml`` will try to call ``dtd.xml`` from our server and then do the attack through it.
+We can easily tell from the code that the ``item1.xml`` will try to call ``dtd.xml`` from our server and then do the attack through it.  
 So I also made a copy of ``dtd.xml`` in my machine with the following content and saved it to my machine : 
 
 ```xml
@@ -131,4 +134,4 @@ I learned a new kind of attack while completing this machine and I hope this art
 
 Do you like my work?  
 
-{ % include support.xml % }
+{ % include support.html % }
