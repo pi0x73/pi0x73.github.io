@@ -63,7 +63,8 @@ inflating: docProps/core.xml
 [...]
 ```
 
-We see a bunch of xml files that together make the `docx` file functionable. 
+We see a bunch of xml files that together make the `docx` file functionable.  
+
 From here we can create a folder named `CustomXML` and put our malicious xml files inside ``item1.xml`` , ``item2.xml`` and so on.
 
 So first I created the folder and used a payload from [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection#xxe-oob-with-dtd-and-php-filter) and injected it into the ``item1.xml`` with the following content :
@@ -82,6 +83,7 @@ So first I created the folder and used a payload from [PayloadAllTheThings](http
 where ``10.10.x.x`` is our ip.
 
 We can easily tell from the code that the ``item1.xml`` will try to call ``dtd.xml`` from our server and then do the attack through it.  
+
 So I also made a copy of ``dtd.xml`` in my machine with the following content and saved it to my machine : 
 
 ```xml
@@ -129,6 +131,8 @@ gbyolo:x:1000:1000::/home/gbyolo:/bin/bash
 aand... as we see we were able to read ``/etc/passwd`` from the remote machine which means our attack was succesful and this way we can read any file in the remote machine like : ssh keys or possible config files to help us identify and gather more information of the machine for further exploitation.
 
 I learned a new kind of attack while completing this machine and I hope this article helps you somehow learn something new.
+
+
 
 
 Do you like my work?  
