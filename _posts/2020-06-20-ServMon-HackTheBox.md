@@ -22,7 +22,7 @@ tags:
 As always I started by firing up a nmap scan against the host and came up with the following results : 
 
 ```
-root@kali~# nmap -sC -sV -v -p- 10.10.10.184 --min-rate=10000
+root@kali:~# nmap -sC -sV -v -p- 10.10.10.184
 PORT      STATE SERVICE       VERSION
 21/tcp    open  ftp           Microsoft ftpd
 | ftp-anon: Anonymous FTP login allowed (FTP code 230)
@@ -105,4 +105,52 @@ PORT      STATE SERVICE       VERSION
 49669/tcp open  msrpc         Microsoft Windows RPC
 49670/tcp open  msrpc         Microsoft Windows RPC
 ```
+
+There seem to be a few holes that could get me inside the machine , but the most suspicious of them where I could gather a little more information for free , seems that allowed `anonymous login` on the ftp server.
+
+After logging in by making use of the anonymous ftp login I was presented with the users folder (Nathan and Nadine) , with both of them having a note saved in text files in their folders : ``Confidental.txt`` and ``Notes to do.txt`` with the following content :
+
+- Confidental.txt
+```
+Nathan,
+
+I left your Passwords.txt file on your Desktop.  Please remove this once you have edited it yourself and place it back into the secure folder.
+
+Regards
+
+Nadine
+```
+
+- Notes to do.txt
+```
+1) Change the password for NVMS - Complete
+2) Lock down the NSClient Access - Complete
+3) Upload the passwords
+4) Remove public access to NVMS
+5) Place the secret files in SharePoint
+```
+
+There seems to be an useful information for some passwords stored on Nathan Desktop folder which we should keep in mind.
+
+### Web
+
+After gathering enough initial information it's safe to take a look on the webpage which represents a simple login page :
+
+![web](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/servmon-walkthrough/web-servmon.png)
+
+The webpage seems like an administration panel for a CCTV system so for the sake of simplicity I decided to search for ``NVMS-1000`` on msf to see if there was any ready made exploit that I could make use of. (not useful for OSCP tho) 
+
+```console
+msf5 > search nvms
+
+Matching Modules
+================
+
+   #  Name                                       Disclosure Date  Rank    Check  Description
+   -  ----                                       ---------------  ----    -----  -----------
+   0  auxiliary/scanner/http/tvt_nvms_traversal  2019-12-12       normal  No     TVT NVMS-1000 Directory Traversal
+```
+   
+The dots starting to connect!
+I came up with a directory traversal exploit for the following NVMS version that could help me grab the previously mentioned ``Passwords.txt`` from Nathan's desktop folder.
 
