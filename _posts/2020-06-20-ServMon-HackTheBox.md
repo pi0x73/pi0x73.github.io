@@ -111,6 +111,7 @@ There seem to be a few holes that could get me inside the machine , but the most
 After logging in by making use of the anonymous ftp login I was presented with the users folder (Nathan and Nadine) , with both of them having a note saved in text files in their folders : ``Confidental.txt`` and ``Notes to do.txt`` with the following content :
 
 - Confidental.txt
+
 ```
 Nathan,
 
@@ -122,6 +123,7 @@ Nadine
 ```
 
 - Notes to do.txt
+
 ```
 1) Change the password for NVMS - Complete
 2) Lock down the NSClient Access - Complete
