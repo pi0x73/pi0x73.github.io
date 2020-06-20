@@ -274,7 +274,7 @@ nadine@SERVMON C:\Users\Nadine>
 
 I can now navigate to https://localhost:8443/ :
 
-![panel](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/servmon-walkthrough/panel-servmon.png)
+![panel](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/servmon-walkthrough/panel.png)
 
 We can use the password from the config file we found earlier and move on to the next step of the exploitation.
 
