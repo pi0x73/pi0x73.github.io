@@ -15,7 +15,7 @@ tags:
   - cve
 ---
 
-![Card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/servmon-walkthrough/servmon.png)
+![Card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/servmon-walkthrough/servmon.PNG)
 
 ## Enumeration
 
