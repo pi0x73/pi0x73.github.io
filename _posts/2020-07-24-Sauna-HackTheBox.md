@@ -78,16 +78,16 @@ Beside that we are provided with a http webpage where we can possibly gain some 
 
 ## Webpage
 
-[!web](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/sauna-walkthrough/sauna1.png)
+![web](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/sauna-walkthrough/sauna1.png)
 
 We are simply provided with a webpage representing a bank with not much interesting information except the ``about us`` part :
 
-[!aboutus](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/sauna-walkthrough/sauna2.png)
+![aboutus](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/sauna-walkthrough/sauna2.png)
 
 We can notice the names of the workers easily under each of their picture.
 I saved the names for lateral use thinking they will be useful and started to google about the username format that is mostly used on an AD environiment and luckily came up with this :
 
-[!usernameformat](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/sauna-walkthrough/sauna3.png)
+![usernameformat](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/sauna-walkthrough/sauna3.png)
 
 As seen above from a forum reply I found somewhere , the usual format for an username would be : First Letter of the First Name + Last Name (ex. Fergus Smith = fsmith)
 Following this order , I tried to generate usernames based on the names provided to us and saved them to a file. 
@@ -111,7 +111,7 @@ And there we go, a hash provided from the attack which we can possibly use to lo
 
 Let's go ahead and save the hash to a file then use john or hashcat to crack it and come up with a plaintext password : 
 
-[!hash](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/sauna-walkthrough/sauna4.png)
+![hash](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/sauna-walkthrough/sauna4.png)
 
 Password Cracked : ``Thestrokes23``
 
