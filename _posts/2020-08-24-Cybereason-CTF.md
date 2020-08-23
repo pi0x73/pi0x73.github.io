@@ -244,17 +244,17 @@ Before even starting to navigate onto the challenge I had too google what `.HAR`
 HAR, short for HTTP Archive, is a format used for tracking information between a web browser and a website. A HAR file is primarily used for identifying performance issues, such as bottlenecks and slow load times, and page rendering problems.
 
 And googling how to open : 
-![har](url)
+![har](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/har.png)
 
 Wonderful! Google has an online tool for that , so Im going to load the challenge file on it and look for what I need.
 
 Upon loading the file and analyzing it content , I tried to stick by description and filter results for SWIFT since that is what I'm looking for :
-![swift](url)
+![swift](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/swift.png)
 
 
 This twitter post url came up : https://twitter.com/SwiftOnSecurity/status/1283833344220893186
 
-![tweet](url)
+![tweet](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/tweet.png)
 
 That one seems kinda guessy but I mean , I do have a description which says I need to figure out what does using RAID makes u , so by looking the picture maybe it makes me look like clown...??? 
 Correct! A clown!
