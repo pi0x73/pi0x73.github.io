@@ -249,7 +249,7 @@ And googling how to open :
 Wonderful! Google has an online tool for that , so Im going to load the challenge file on it and look for what I need.
 
 Upon loading the file and analyzing it content , I tried to stick by description and filter results for SWIFT since that is what I'm looking for :
-![swift](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/swift.png)
+![swift](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/SWIFT.png)
 
 
 This twitter post url came up : https://twitter.com/SwiftOnSecurity/status/1283833344220893186
