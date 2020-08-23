@@ -303,3 +303,60 @@ I tried to use both of the files as flags since ... why not? and ended up with o
     └── REally this should be easier (15)
 
 ```
+
+# 1. Images != password vaults (15)
+#### Description : 
+``Rember that sysadmin we had to let go? We found an image that we think has their admin password but it appears to be corrupted.``
+#### File : 
+``password1.png``
+
+I tried to view the image in my machine but as it's said in description it is corrupted so going to use pngcheck to see for possible errors :
+```
+┌──(root㉿kali)-[~/Downloads]
+└─# pngcheck password1.png                                                                                                                                 2 ⨯
+password1.png  CRC error in chunk IHDR (computed ae28072d, expected 3d8d3c4d)
+ERROR: password1.png
+```
+A CRC error is dropped on the chunk IHDR 
+
+I can use PCRT to fix that error which is an Automated PNG Check & Repair Tool : 
+
+```
+┌──(root㉿kali)-[~/tools/PCRT]
+└─# python PCRT.py -i /root/Downloads/password1.png -v -y -o password1.png
+
+         ____   ____ ____ _____ 
+        |  _ \ / ___|  _ \_   _|
+        | |_) | |   | |_) || |  
+        |  __/| |___|  _ < | |  
+        |_|    \____|_| \_\|_|  
+
+        PNG Check & Repair Tool 
+
+Project address: https://github.com/sherlly/PCRT
+Author: sherlly
+Version: 1.1
+
+[Finished] Correct PNG header
+[Detected] Error IHDR CRC found! (offset: 0x1D)
+chunk crc: 3D8D3C4D
+correct crc: AE28072D
+[Finished] Successfully fix crc
+```
+
+The recovered image is loaded but doesnt yet seem fully recovered.
+![png](url)
+
+Nothing was found either on `binwalk` or `exiftool`. However while enumerating the image something seemed somehow weird to me... the image resolution : 1000x500.
+I didnt have any exact explaination or reference for what I did but I just thought of scaling the image to 1000x1000 using [TweakPNG](http://entropymine.com/jason/tweakpng/). Maybe there is a hidden part that I can recover while changing resolution.
+
+After changing to 1000x1000 I get this:
+
+![pmg](url)
+
+#### FLAG : ``g@rb@g3_fil3_fr0m_7th3_gib$0n``
+NOTE : A more detailed and explained writeup from my teammatecan be found here : https://medium.com/@bl00dy.al/images-password-vaults-cybereasons-summer-ctf-c83be3e9e08
+
+
+
+
