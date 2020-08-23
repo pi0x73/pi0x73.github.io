@@ -18,7 +18,27 @@ tags:
 
 Hello infosec folks. I hope the weekend has found you all good. I recently participated in Cybereason Summer 2020 ctf as ``pi0x73`` with team : ``unallocated`` finishing all 10 out of 10 challenges. I made a walkthrough of them in this blog post since I found some of them very interesting and worth sharing for someone else to read.
 
-# 00 Basic
+# Overwiew
+
+### Challenges
+
+├── 00 Basic
+│   ├── Been There (5)
+│   ├── Executive retreat to Amity Island (5)
+|   └── Malop (5)
+├── 01 Intermediate
+│   ├── A thin pane of glass (10)
+│   ├── I'm not even supposed to be here today (10)
+│   ├── Its a shame really  (10)
+|   └── Swiftly (10)
+└── 02 Advanced
+    ├── Are you still investigating that? (15)
+    ├── Images != password vaults (15)
+    └── REally this should be easier (15)
+
+
+
+## 00 Basic
 ```
    ├── 00 Basic
    │   ├── Been There (5)
@@ -27,7 +47,7 @@ Hello infosec folks. I hope the weekend has found you all good. I recently parti
 ```
 
 
-# 1.Been There (5)
+### 1.Been There (5)
 
 #### Description :
 ``Carl, the guy a few desks down that is always talking about owls, forgot his password again and we can't reset it. But, we managed to get a lsass dump from the machine. Our password policy only requires two numbers and some letters.``
@@ -88,7 +108,7 @@ However while trying to crack on john or hashcat I didnt came up with anything s
 
 
 
-# 2. Executive retreat to Amity Island (5)
+### 2. Executive retreat to Amity Island (5)
 
 #### Description :
 ``Here is a list of the executives here at Cybereason. Somthing tells me that it's not complete.``
@@ -115,7 +135,7 @@ I thought the flag could be hidding on `?id=1` so I gave it a try using curl :
 #### Flag : `flag{5h4rk_bait_hoohaha}`
 
 
-# 3. Malop (5)
+### 3. Malop (5)
 
 #### Description :
 ``What is the hash of the Excel file discovered by Cybereason attempting to use a Domain Generating Algorithm on richard-win10?``
@@ -148,7 +168,7 @@ I tried to use the MD5 file hash as a flag and this happened to work as a correc
 
 
 
-# 01 Intermediate
+## 01 Intermediate
 ```
 ├── 01 Intermediate
 │   ├── A thin pane of glass (10)
@@ -157,7 +177,7 @@ I tried to use the MD5 file hash as a flag and this happened to work as a correc
 |   └── Swiftly (10)
 ```
 
-# 1. A thin pane of glass (10)
+### 1. A thin pane of glass (10)
 
 #### Description :
 ``A windows machine was compromised. We think it was related to credential reuse. But not sure whose account. Any ways, my eyes hurt scrolling through this log.``
@@ -182,7 +202,7 @@ All four of them might be a possible correct flag so I tried all four of them...
 
 
 
-# 2. Its a shame really  (10)
+### 2. Its a shame really  (10)
 
 #### Description :
 ``We had to let one our sysadmins go. They may have been leaking data. We suspect this server, challenges.ctfd.io:30129, was used but can't seem to get in. Can you help us get in?``
@@ -235,7 +255,7 @@ flag{usedthebruteforce}
 #### FLAG : ``usedthebruteforce``
 
 
-# 3. Swiftly (10)
+### 3. Swiftly (10)
 #### Description : 
 ``I forgot what Swift says using mirrored raid makes you. Here is some log to help figure it out.``
 #### Files :
@@ -264,7 +284,7 @@ Correct! A clown!
 #### FLAG : ``CLOWN``
 
 
-# 4. I'm not even supposed to be here today (10)
+### 4. I'm not even supposed to be here today (10)
 #### Description :
 ``Kelesy complained about something strange on her computer, and the L1 analyst looking at it could use some help. Can you provide the remote file name that was downloaded and executed to establish Command and Control. Kelesy's machine name is Kelsey-prodmgr .``
 
@@ -297,7 +317,7 @@ I tried to use both of the files as flags since ... why not? and ended up with o
 
 #### FLAG : ``msbuild_nps.xml``
 
-# 02 Advanced 
+## 02 Advanced 
 
 ```
     ├── Are you still investigating that? (15)
@@ -306,7 +326,7 @@ I tried to use both of the files as flags since ... why not? and ended up with o
 
 ```
 
-# 1. Images != password vaults (15)
+### 1. Images != password vaults (15)
 #### Description : 
 ``Rember that sysadmin we had to let go? We found an image that we think has their admin password but it appears to be corrupted.``
 #### File : 
@@ -360,7 +380,7 @@ After changing to 1000x1000 I get this:
 NOTE : A more detailed and explained writeup from my teammatecan be found here : https://medium.com/@bl00dy.al/images-password-vaults-cybereasons-summer-ctf-c83be3e9e08
 
 
-# 2. REally this should be easier (15)
+### 2. REally this should be easier (15)
 #### Description : 
 ``A random binary appears. Does this even have a purpose? Maybe you can get something from it.``
 #### Files : 
@@ -417,7 +437,7 @@ NOTE : After some more analyzing later I found the missing string
 The correct password was : ``Cybereason Summer CTF&01``
 
 
-# 3. Are you still investigating that? (15)
+### 3. Are you still investigating that? (15)
 #### Description :
 ``What is the GMT timestamp of the first DNS query from the only mobile device to connect to the same Command and Control server as Kelesy's Machine?``
 
@@ -443,5 +463,5 @@ But not yet the correct answer , because the description mentions that the time 
  
 #### FLAG : ``June 25, 2020 at 11:07:33 AM GMT``
  
-# CTF Impressions
+## CTF Impressions
 This event was overall good and I had a lot of fun while solving the challenges one by one and probably learnt a thing or two from them. My team ended up 14th with maximal score , however we didnt complete everything in time to hope for some prizes. I hope you too learn something new after reading my walkthrough :)
