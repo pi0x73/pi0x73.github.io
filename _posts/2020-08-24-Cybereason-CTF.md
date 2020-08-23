@@ -373,12 +373,12 @@ I downloaded the file and started to do some analysing on it :
 Win.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows
 ```
 Lets execute the binary using Wine :
-![wine](url)
+![wine](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/wine.png)
 
 Nothing unexpected here and a large amount of strings which doesnt hold anything usual, but you can notice it's written in GO so that will be hard to reverse.
 I dropped the file to my Reversing VM and started to dig into it using ``x64dbg`` .
 
-![dbg](url)
+![dbg](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/dbg.png)
 
 Messy right? Trying to reverse that GO file I got a headache and somehow gave up on it. I was only able to find out that the user input is compared by 0x18 length (24)
 But wasn't able to find the actual string it compares our input with.
@@ -424,4 +424,4 @@ Without much side explaination lets go and solve this final challenge.
 
 From the list of the Active Threats we see there is a same phone with 2 active threats. Hopefully it is the phone that we are looking for.
 
-![phone](url)
+![phone](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/)
