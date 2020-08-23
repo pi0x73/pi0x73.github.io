@@ -80,7 +80,7 @@ luid 1327349
 
 I can simply notice the NT hash : `1b07bf7e4ae05f62c852daa3a8d92d25`
 However while trying to crack on john or hashcat I didnt came up with anything so I decided to use https://hashes.com to crack it and came up with the following result:
-![hash](url)
+![hash](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/hash.png)
 
 #### Flag : `archimedes01`
 
@@ -95,7 +95,7 @@ http://challenges.ctfd.io:30135
 
 I simply navigated the webpage which came up with a list of workers for the Cybereason company :
 
-![web](url)
+![web](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/web.png)
 
 There seems to be a simple page viewing workers by taking a value on `?id` parameter.
 While navigating I noticed that the workers listing starts from `?id=2`.
@@ -126,19 +126,19 @@ https://summerctf.cybereason.net/#/discovery/inbox
 The website seems like a malware & threat analyzing platform. I simply use the credentials provided and start looking for the machine mentioned in the description to grab more information.
 
 Quickly noticed one threat marked as low which seems to hold exactly what I'm looking for:
-![excel](url)
+![excel](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/excel.png)
 
 Under 5 machines that seem to have been affected from this threat I can notice the machine we are looking for : `richard-win10`
 
-![machines(url)
+![machines(https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/machine.png)
 
 I click on Investigate under the mentioned machine and viewed a tree of the latest processes where can be noticed excel.exe marked in red :
 
-![tree](url)
+![tree](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/tree.png)
 
 7 excel files are found to be opened under the process and I decided to view one of them which kinda looked weird by it's name : `2020 recruitment plan.xlsm:zone.identifier:$data`
 
-![md5](url)
+![md5](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/md5.png)
 
 I tried to use the MD5 file hash as a flag and this happened to work as a correct flag.
 
