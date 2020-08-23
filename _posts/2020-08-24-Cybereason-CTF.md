@@ -16,4 +16,11 @@ tags:
   - dfir
 ---
 
-# 00 Basic
+ # ├── 00 Basic
+   │   ├── Been There (5)
+   │   ├── Executive retreat to Amity Island (5)
+   |   └── Malop (5)
+
+
+ # 1.Been There (5)
+ 
