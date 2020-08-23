@@ -345,14 +345,14 @@ correct crc: AE28072D
 ```
 
 The recovered image is loaded but doesnt yet seem fully recovered.
-![png](url)
+![png](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/png.png)
 
 Nothing was found either on `binwalk` or `exiftool`. However while enumerating the image something seemed somehow weird to me... the image resolution : 1000x500.
 I didnt have any exact explaination or reference for what I did but I just thought of scaling the image to 1000x1000 using [TweakPNG](http://entropymine.com/jason/tweakpng/). Maybe there is a hidden part that I can recover while changing resolution.
 
 After changing to 1000x1000 I get this:
 
-![pmg](url)
+![flag](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/flag.png)
 
 #### FLAG : ``g@rb@g3_fil3_fr0m_7th3_gib$0n``
 NOTE : A more detailed and explained writeup from my teammatecan be found here : https://medium.com/@bl00dy.al/images-password-vaults-cybereasons-summer-ctf-c83be3e9e08
