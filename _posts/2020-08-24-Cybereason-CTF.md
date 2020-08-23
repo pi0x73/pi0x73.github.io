@@ -85,15 +85,16 @@ However while trying to crack on john or hashcat I didnt came up with anything s
 #### Flag : `archimedes01`
 
 
-# 2. Executive retreat to Amity Island
+
+# 2. Executive retreat to Amity Island (5)
 
 #### Description :
 ``Here is a list of the executives here at Cybereason. Somthing tells me that it's not complete.``
-
 #### Webpage : 
 http://challenges.ctfd.io:30135
 
 I simply navigated the webpage which came up with a list of workers for the Cybereason company :
+
 ![web](url)
 
 There seems to be a simple page viewing workers by taking a value on `?id` parameter.
@@ -110,3 +111,46 @@ I thought the flag could be hidding on `?id=1` so I gave it a try using curl :
 ```
 
 #### Flag : `flag{5h4rk_bait_hoohaha}`
+
+
+# 3. Malop (5)
+
+#### Description :
+``What is the hash of the Excel file discovered by Cybereason attempting to use a Domain Generating Algorithm on richard-win10?``
+#### URL :
+https://summerctf.cybereason.net/#/discovery/inbox
+#### Credentials :
+``User: summerctf@cybereason.com``
+``Password: summerctf2020``
+
+The website seems like a malware & threat analyzing platform. I simply use the credentials provided and start looking for the machine mentioned in the description to grab more information.
+
+Quickly noticed one threat marked as low which seems to hold exactly what I'm looking for:
+![excel](url)
+
+Under 5 machines that seem to have been affected from this threat I can notice the machine we are looking for : `richard-win10`
+
+![machines(url)
+
+I click on Investigate under the mentioned machine and viewed a tree of the latest processes where can be noticed excel.exe marked in red :
+
+![tree](url)
+
+7 excel files are found to be opened under the process and I decided to view one of them which kinda looked weird by it's name : `2020 recruitment plan.xlsm:zone.identifier:$data`
+
+![md5](url)
+
+I tried to use the MD5 file hash as a flag and this happened to work as a correct flag.
+
+#### Flag : ``fbccf14d504b7b2dbcb5a5bda75bd93b``
+
+
+
+# 01 Intermediate
+```
+├── 01 Intermediate
+│   ├── A thin pane of glass (10)
+│   ├── I'm not even supposed to be here today (10)
+│   ├── Its a shame really  (10)
+|   └── Swiftly (10)
+```
