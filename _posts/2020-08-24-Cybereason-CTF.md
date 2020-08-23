@@ -130,7 +130,7 @@ Quickly noticed one threat marked as low which seems to hold exactly what I'm lo
 
 Under 5 machines that seem to have been affected from this threat I can notice the machine we are looking for : `richard-win10`
 
-![machines(https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/machine.png)
+![machines](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/machine.png)
 
 I click on Investigate under the mentioned machine and viewed a tree of the latest processes where can be noticed excel.exe marked in red :
 
