@@ -231,3 +231,32 @@ flag{usedthebruteforce}
 ```
 
 #### FLAG : ``usedthebruteforce``
+
+
+# 3. Swiftly (10)
+#### Description : 
+``I forgot what Swift says using mirrored raid makes you. Here is some log to help figure it out.``
+#### Files :
+``HAR.HAR``
+
+Before even starting to navigate onto the challenge I had too google what `.HAR` files are and how are they usually treated:
+
+HAR, short for HTTP Archive, is a format used for tracking information between a web browser and a website. A HAR file is primarily used for identifying performance issues, such as bottlenecks and slow load times, and page rendering problems.
+
+And googling how to open : 
+![har](url)
+
+Wonderful! Google has an online tool for that , so Im going to load the challenge file on it and look for what I need.
+
+Upon loading the file and analyzing it content , I tried to stick by description and filter results for SWIFT since that is what I'm looking for :
+![swift](url)
+
+
+This twitter post url came up : https://twitter.com/SwiftOnSecurity/status/1283833344220893186
+
+![tweet](url)
+
+That one seems kinda guessy but I mean , I do have a description which says I need to figure out what does using RAID makes u , so by looking the picture maybe it makes me look like clown...??? 
+Correct! A clown!
+
+#### FLAG : ``CLOWN``
