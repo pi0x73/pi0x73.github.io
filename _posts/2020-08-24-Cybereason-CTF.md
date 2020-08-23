@@ -1,10 +1,10 @@
 ---
 layout: single
 title: "Cybereason CTF Writeup (ALL CHALLENGES)"
-excerpt: ""
+excerpt: "Walkthrough for Cybereason Summer 2020 CTF"
 date: 2020-08-24
 header:
-  teaser: /assets/images/xxe-injection/xxe.png
+  teaser: /assets/images/cybereason/ctf.png
   teaser_home_page: true
 classes: wide
 categories:
@@ -15,6 +15,8 @@ tags:
   - reverse-engineering
   - dfir
 ---
+
+Hello infosec folks. I hope the weekend has found you all good. I recently participated in Cybereason Summer 2020 ctf as ``pi0x73`` with team : ``unallocated`` finishing all 10 out of 10 challenges. I made a walkthrough of them in this blog post since I found some of them very interesting and worth sharing for someone else to read.
 
 # 00 Basic
 ```
@@ -430,10 +432,10 @@ I decided to view the device profile and expand the information. I noticed 5 sus
 Now as the description says : ``the only mobile device to connect to the same Command and Control server as Kelesy's Machine``. Luckily we know the previous domain name which was used to transfer malicious files into Kelsey machine : https://rctesting.duckdns.org
 
 Here we meet the same domain name : 
-![query](url)
+![query](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/query.png)
 
 What we actually need is the time stamped in that part of the information :
-![time](url)
+![time](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/time.png)
 
 But not yet the correct answer , because the description mentions that the time need to be in raw GMT and here I am provided with GMT 2+ which is my timezone , so Im going to convert the timestamp to GMT :
 
