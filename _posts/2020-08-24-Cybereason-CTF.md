@@ -441,7 +441,7 @@ But not yet the correct answer , because the description mentions that the time 
 
  June 25, 2020 at 1:07:33 PM GMT+2  >  June 25, 2020 at 11:07:33 AM GMT
  
- #### FLAG : ``June 25, 2020 at 11:07:33 AM GMT``
+#### FLAG : ``June 25, 2020 at 11:07:33 AM GMT``
  
- # CTF Impressions
- This event was overall good and I had a lot of fun while solving the challenges one by one and probably learnt a thing or two from them. My team ended up 14th with maximal score , however we didnt complete everything in time to hope for some prizes. I hope you too learn something new after reading my walkthrough :)
+# CTF Impressions
+This event was overall good and I had a lot of fun while solving the challenges one by one and probably learnt a thing or two from them. My team ended up 14th with maximal score , however we didnt complete everything in time to hope for some prizes. I hope you too learn something new after reading my walkthrough :)
