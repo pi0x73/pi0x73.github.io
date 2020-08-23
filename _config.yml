@@ -12,14 +12,14 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 remote_theme             : "mmistakes/minimal-mistakes@4.15.1"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "haxor", "dirt", "neon", "mint", "plum", "sunrise", "dark"
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "haxor", "dirt", "neon", "mint", "plum", "sunrise", "dark"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "pluggedin's blog"
+title                    : "pi0x73's blog"
 title_separator          : "-"
-name                     : "pluggedin's blog"
-description              : "Articles about cybersecurity"
+name                     : "pi0x73's blog"
+description              : "Articles about infosec"
 url                      : "https://pi0x73.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "pi0x73/pi0x73.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -126,7 +126,7 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          : "0x73"
+  twitter          : "suljotgjokaa"
   vine             :
   weibo            :
   xing             :
