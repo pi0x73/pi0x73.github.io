@@ -83,3 +83,30 @@ However while trying to crack on john or hashcat I didnt came up with anything s
 ![hash](url)
 
 #### Flag : `archimedes01`
+
+
+# 2. Executive retreat to Amity Island
+
+#### Description :
+``Here is a list of the executives here at Cybereason. Somthing tells me that it's not complete.``
+
+#### Webpage : 
+http://challenges.ctfd.io:30135
+
+I simply navigated the webpage which came up with a list of workers for the Cybereason company :
+![web](url)
+
+There seems to be a simple page viewing workers by taking a value on `?id` parameter.
+While navigating I noticed that the workers listing starts from `?id=2`.
+
+I thought the flag could be hidding on `?id=1` so I gave it a try using curl :
+```
+┌──(root㉿kali)-[~]
+└─# curl -XGET challenges.ctfd.io:30135/?id=1 | grep flag
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  4551  100  4551    0     0  1039        <p class="card-text"><small class="text-muted">flag{5h4rk_bait_hoohaha}</small></p>
+0      0 --:--:-- --:--:-- --:--:-- 10366
+```
+
+#### Flag : `flag{5h4rk_bait_hoohaha}`
