@@ -39,12 +39,7 @@ Hello infosec folks. I hope the weekend has found you all good. I recently parti
 
 
 ## 00 Basic
-```
-   ├── 00 Basic
-   │   ├── Been There (5)
-   │   ├── Executive retreat to Amity Island (5)
-   |   └── Malop (5)
-```
+
 
 
 ### 1.Been There (5)
@@ -169,13 +164,7 @@ I tried to use the MD5 file hash as a flag and this happened to work as a correc
 
 
 ## 01 Intermediate
-```
-├── 01 Intermediate
-│   ├── A thin pane of glass (10)
-│   ├── I'm not even supposed to be here today (10)
-│   ├── Its a shame really  (10)
-|   └── Swiftly (10)
-```
+
 
 ### 1. A thin pane of glass (10)
 
@@ -319,12 +308,6 @@ I tried to use both of the files as flags since ... why not? and ended up with o
 
 ## 02 Advanced 
 
-```
-    ├── Are you still investigating that? (15)
-    ├── Images != password vaults (15)
-    └── REally this should be easier (15)
-
-```
 
 ### 1. Images != password vaults (15)
 #### Description : 
