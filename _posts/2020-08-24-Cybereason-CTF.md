@@ -424,4 +424,22 @@ Without much side explaination lets go and solve this final challenge.
 
 From the list of the Active Threats we see there is a same phone with 2 active threats. Hopefully it is the phone that we are looking for.
 
-![phone](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/)
+![phone](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/phone.png)
+
+I decided to view the device profile and expand the information. I noticed 5 suspicious outbound connections from a total of 139 connections, and I clicked on the first one.
+Now as the description says : ``the only mobile device to connect to the same Command and Control server as Kelesy's Machine``. Luckily we know the previous domain name which was used to transfer malicious files into Kelsey machine : https://rctesting.duckdns.org
+
+Here we meet the same domain name : 
+![query](url)
+
+What we actually need is the time stamped in that part of the information :
+![time](url)
+
+But not yet the correct answer , because the description mentions that the time need to be in raw GMT and here I am provided with GMT 2+ which is my timezone , so Im going to convert the timestamp to GMT :
+
+ June 25, 2020 at 1:07:33 PM GMT+2  >  June 25, 2020 at 11:07:33 AM GMT
+ 
+ #### FLAG : ``June 25, 2020 at 11:07:33 AM GMT``
+ 
+ # CTF Impressions
+ This event was overall good and I had a lot of fun while solving the challenges one by one and probably learnt a thing or two from them. My team ended up 14th with maximal score , however we didnt complete everything in time to hope for some prizes. I hope you too learn something new after reading my walkthrough :)
