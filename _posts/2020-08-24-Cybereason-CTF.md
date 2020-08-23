@@ -358,5 +358,70 @@ After changing to 1000x1000 I get this:
 NOTE : A more detailed and explained writeup from my teammatecan be found here : https://medium.com/@bl00dy.al/images-password-vaults-cybereasons-summer-ctf-c83be3e9e08
 
 
+# 2. REally this should be easier (15)
+#### Description : 
+``A random binary appears. Does this even have a purpose? Maybe you can get something from it.``
+#### Files : 
+``Win.exe``, ``Mac``
+
+The description doesnt seem to hint about anything specifically and this was by far the hardest challenge on the whole collection . 
+I downloaded the file and started to do some analysing on it :
+
+```
+┌──(root㉿kali)-[~/Downloads]
+└─# file Win.exe                                                                                                                                         130 ⨯
+Win.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows
+```
+Lets execute the binary using Wine :
+![wine](url)
+
+Nothing unexpected here and a large amount of strings which doesnt hold anything usual, but you can notice it's written in GO so that will be hard to reverse.
+I dropped the file to my Reversing VM and started to dig into it using ``x64dbg`` .
+
+![dbg](url)
+
+Messy right? Trying to reverse that GO file I got a headache and somehow gave up on it. I was only able to find out that the user input is compared by 0x18 length (24)
+But wasn't able to find the actual string it compares our input with.
+After a while someone mentioned that if you lucky enough there is some base64 around.
+I wanted to give it another go but this time look for b64 strings in the file using ``strings`` .
+We know that base64 strings usually end with `=` or ``=``  so I tried something like :
+
+```
+┌──(root㉿kali)-[~/Downloads]
+└─# strings Win.exe | grep ==
+[...]
+SWYgeW91IGNyYWNrZWQgdGhpcw==
+```
+```
+┌──(root㉿kali)-[~/Downloads]
+└─# strings Win.exe | grep =
+[...]
+eW91IGFyZSBhIGdvb2QgcmV2ZXJzZXI=
+```
+
+Decoding those strings : 
+```
+┌──(root㉿kali)-[~/Downloads]
+└─# echo "SWYgeW91IGNyYWNrZWQgdGhpcw==" | base64 -d && echo "eW91IGFyZSBhIGdvb2QgcmV2ZXJzZXI=" | base64 -d                                                 1 ⨯
+If you cracked this you are a good reverser                                                                                                                     
+```
+I tried to input `ifyoucrackedthisyouareagoodreverser` as a password even though it was larger than 24 length and however it failed.
+This message seemed like a success message after the input so I thought this could be somehow the flag.
+Inputing the sentence as a flag I get this challenge completed!
+
+#### FLAG : ``If you cracked this you are a good reverser``
+
+NOTE : After some more analyzing later I found the missing string
+The correct password was : ``Cybereason Summer CTF&01``
 
 
+# 3. Are you still investigating that? (15)
+#### Description :
+``What is the GMT timestamp of the first DNS query from the only mobile device to connect to the same Command and Control server as Kelesy's Machine?``
+
+Oh not again...! Provided with the same website of malware and threat analyzing again, I can say that this was the most annoying and boring part of the CTF. Messing with a Malware Hunting platform didnt seem so interesting to me however that was said to have been the goal of all this CTF & Online Conf (Teaching people the Cybereason platform).
+Without much side explaination lets go and solve this final challenge.
+
+From the list of the Active Threats we see there is a same phone with 2 active threats. Hopefully it is the phone that we are looking for.
+
+![phone](url)
