@@ -44,7 +44,7 @@ Hello infosec folks. I hope the weekend has found you all good. I recently parti
 ### 1.Been There (5)
 
 **Description :
-<*Carl, the guy a few desks down that is always talking about owls, forgot his password again and we can't reset it. But, we managed to get a lsass dump from the machine. Our password policy only requires two numbers and some letters.*
+> *Carl, the guy a few desks down that is always talking about owls, forgot his password again and we can't reset it. But, we managed to get a lsass dump from the machine. Our password policy only requires two numbers and some letters.*
 #### Files :
 ``lsass.dmp``
 
