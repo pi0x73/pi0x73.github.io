@@ -6,7 +6,6 @@ date: 2020-06-20
 header:
   teaser: /assets/images/servmon-walkthrough/servmon.PNG
   teaser_home_page: true
-classes: wide
 categories:
   - hackthebox
   - infosec
