@@ -6,7 +6,6 @@ date: 2020-08-24
 header:
   teaser: /assets/images/cybereason/ctf.png
   teaser_home_page: true
-classes: wide
 categories:
   - ctf
 tags:
