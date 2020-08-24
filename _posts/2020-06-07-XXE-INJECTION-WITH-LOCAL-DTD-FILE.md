@@ -6,7 +6,6 @@ date: 2020-06-07
 header:
   teaser: /assets/images/xxe-injection/xxe.png
   teaser_home_page: true
-classes: wide
 categories:
   - bug-hunting
 tags:
