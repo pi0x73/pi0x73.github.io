@@ -43,13 +43,13 @@ Hello infosec folks. I hope the weekend has found you all good. I recently parti
 
 ### 1.Been There (5)
 
-**Description :
+**Description** :
 > *Carl, the guy a few desks down that is always talking about owls, forgot his password again and we can't reset it. But, we managed to get a lsass dump from the machine. Our password policy only requires two numbers and some letters.*
-#### Files :
+**Files** :
 ``lsass.dmp``
 
 From the description and the file provided , it seems like a basic challenge. Simply downloading the dump and extracting a hash which should be decrypted afterwards.
-I quickly downloaded the file and loaded it using `pypykatz`
+I quickly downloaded the file and loaded it using **pypykatz**
 
 ```
 ┌──(root㉿kali)-[~/Downloads]
@@ -98,16 +98,16 @@ I can simply notice the NT hash : `1b07bf7e4ae05f62c852daa3a8d92d25`
 However while trying to crack on john or hashcat I didnt came up with anything so I decided to use https://hashes.com to crack it and came up with the following result:
 ![hash](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/cybereason/hash.png)
 
-#### Flag : `archimedes01`
+**Flag** : `archimedes01`
 
 
 
 ### 2. Executive retreat to Amity Island (5)
 
-#### Description :
-``Here is a list of the executives here at Cybereason. Somthing tells me that it's not complete.``
-#### Webpage : 
-http://challenges.ctfd.io:30135
+**Description** :
+>*Here is a list of the executives here at Cybereason. Somthing tells me that it's not complete.*
+**Webpage** : 
+>*http://challenges.ctfd.io:30135*
 
 I simply navigated the webpage which came up with a list of workers for the Cybereason company :
 
