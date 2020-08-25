@@ -106,7 +106,7 @@ author:
   bio              : "Hi! I'm Suljot.<br>Technology Enthusiast and<br>Security Researcher.<br>19yo, student.<br><br>"
   location         : "Albania"
   email            : "suljotgjokaaa@gmail.com"
-  uri              : "https://pi0x73.github.io"
+  uri              : 
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :
   codepen          :
@@ -120,7 +120,7 @@ author:
   keybase          : 
   instagram        :
   lastfm           :
-  linkedin         : "suljotgjoka"
+  linkedin         : 
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
