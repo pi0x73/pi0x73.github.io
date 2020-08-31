@@ -1,13 +1,13 @@
 /* ==========================================================================
-   Customized dark skin @pluggedin
+   Dark skin
    ========================================================================== */
 
 /* Colors */
-$background-color: #171717 !default;
+$background-color: #252a34 !default;
 $text-color: #eaeaea !default;
-$primary-color: #16c8d1 !default;
+$primary-color: #00adb5 !default;
 $border-color: mix(#fff, $background-color, 20%) !default;
-$code-background-color: mix(rgb(0, 156, 204), $background-color, 15%) !default;
+$code-background-color: mix(#000, $background-color, 15%) !default;
 $code-background-color-dark: mix(#000, $background-color, 20%) !default;
 $form-background-color: mix(#000, $background-color, 15%) !default;
 $footer-background-color: mix(#000, $background-color, 30%) !default;
