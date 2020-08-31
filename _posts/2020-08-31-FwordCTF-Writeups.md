@@ -150,7 +150,7 @@ I visit the pastebin given url and get the following message :
 I am provided with another pastebin url so I go to visit that one too and get a very long base64 string.
 Next Im going to visit CyberChef to decode the string. 
 
-![chef](url)
+![chef](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/chef.png)
 
 I can notice some very interesting header in the decoded string which looks like a JPG **magic byte**.
 
@@ -158,7 +158,7 @@ Wikipedia Information :
 ![jpg](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/jpg.png)
 
 I procced by saving the output on cyberchef as **challenge.jpg** and while opening I can see this :
-![chall](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/chef.png)
+![chall](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/chall.png)
 
 I got surprised seeing this message as I have had the chance to travel in Montenegro before and I was able to recognize the place very quickly.
 My first thought would be of a review in [TripAdvisor](https://www.tripadvisor.com/) as this is where most of reviews for OSINT challenges are left usually so I started to look around for a topic on ``Hilton Podgorica`` in ***TripAdvisor*** and after finding it , I saw an interesting review from someone we need to find :
@@ -168,7 +168,7 @@ My first thought would be of a review in [TripAdvisor](https://www.tripadvisor.c
 I clicked on his profile to grab some more possible information and quickly noticed this weird username : ``@check_my_instagram``
 and in Topics I noticed another possible username which could be used as an **Instagram** username. ``wokaihwokomaskustermann``
 
-[instagram](https://www.instagram.com/wokaihwokomaskustermann/)
+[https://www.instagram.com/wokaihwokomaskustermann/](https://www.instagram.com/wokaihwokomaskustermann/)
 
 I am presented with this kinda empty instagram profile but I could notice a story posted saying : 
 >*The one suggestion I have for instagram is to allow square sized profile pictures*
