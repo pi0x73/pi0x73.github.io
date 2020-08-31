@@ -42,11 +42,7 @@ Cipher : 90452426227632743575448358222399800488741564438806443851386755007595846
 
 From the first review We can see that we are given enough values to perform a ``partial key exposure attack`` therefore we can use ***Chinese Remainder Theorem (CRT)*** for the decryption, which is quite similar to the usual RSA decryption but with one different condition.
 
-The difference from the usual decryption and the RSA-CRT decryption is that here We use :
-
-***dp≡d(modp−1)***
-
-instead of a single private key (d).
+The difference from the usual decryption and the RSA-CRT decryption is that here we do not use single private key (d) but ``dp≡d(modp−1)``. 
 
 From some googling about the CRT-RSA decryption process I found the following information :
 
