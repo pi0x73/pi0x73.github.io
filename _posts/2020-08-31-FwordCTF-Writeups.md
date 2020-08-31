@@ -14,7 +14,7 @@ tags:
   - osint
 ---
 
-![fword(]https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/fword.png)
+![fword](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/fword.png)
 
 # Overview
 This was quite a good thought CTF with many interesting and tough challenges which I enjoyed while playing , however going to only make 2 challenge writeups on the following blog post.
