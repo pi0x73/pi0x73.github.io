@@ -23,7 +23,7 @@ These ones looked very interesting to me.
 **Description** :
 >*One part is secure ?*
 
-We are only given the remote server to connect on , and see what is going on with that one challenge : ``onepart.fword.wtf 4445``
+We are only given the remote server to connect on , and see what is going on with that one challenge : ``onepart.fword.wtf 4445``.
 
 We can use ****netcat**** to connect to the remote server and grab some information :
 ```sh
