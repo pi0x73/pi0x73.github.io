@@ -5,7 +5,7 @@ excerpt: "Writeups for 2 of the challenges from Fword 2020 CTF"
 date: 2020-08-31
 classes : wide
 header:
-  teaser: /assets/images/fword-ctf/ctf.png
+  teaser: /assets/images/fword-ctf/fword.png
   teaser_home_page: true
 categories:
   - ctf
@@ -13,6 +13,8 @@ tags:
   - crypto
   - osint
 ---
+
+![fword(]https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/fword.png)
 
 # Overview
 This was quite a good thought CTF with many interesting and tough challenges which I enjoyed while playing , however going to only make 2 challenge writeups on the following blog post.
