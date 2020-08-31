@@ -172,6 +172,7 @@ and in Topics I noticed another possible username which could be used as an **In
 
 I am presented with this kinda empty instagram profile but I could notice a story posted saying : 
 >*The one suggestion I have for instagram is to allow square sized profile pictures*
+
 so I thought the flag could be hidden in the full view of the profile picture :
 
 ![flag](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/flag.png)
