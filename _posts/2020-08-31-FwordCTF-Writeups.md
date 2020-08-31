@@ -127,7 +127,7 @@ To begin I started to search for ***@1337bloggs*** username on twitter but had n
 Following the above profile , I was able to find the account mentioned in the challenge description as one of the followers of ***EwordTeam*** on twitter.
 Clicking on his ``tweet&replies`` we can see :
 
-![tweets](url)
+![tweets](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/tweets.png)
 
 Seems like a challenge is provided in their CTFtime.org profile page in order to join the team but everything was empty there so we could use [Wayback Machine](https://archive.org/web/) to see for previous changes in the page.
 
@@ -174,7 +174,7 @@ I am presented with this kinda empty instagram profile but I could notice a stor
 >*The one suggestion I have for instagram is to allow square sized profile pictures*
 so I thought the flag could be hidden in the full view of the profile picture :
 
-[flag](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/flag.png)
+![flag](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/flag.png)
 Using the website above I was able to view the full profile picture and notice the flag lying in the bottom of the image.
 
 #### Flag
