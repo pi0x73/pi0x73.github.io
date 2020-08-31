@@ -39,11 +39,11 @@ dp : 104402896302994202734948778517366637140776236526426804228566136031503470616
 Cipher : 9045242622763274357544835822239980048874156443880644385138675500759584604526273475226842750416108701427998940567271877957754330185397605308429857013804586694230860812067586635816236827789043509539544108153164004825156286367834342137620394360377782112359204843336537521290071551705674877988593444673896840081020594848648892508563525548629538386215847502296041252724965402173421681679607664531325094223651810864485017095591981097893070155871256153570767852661054256846500272829720800455981893631803581317717280593572533847348974018714387685164187112725078714544306615308363939229011022605751769677183577421294695836989
 ```
 
-From the first review We can see that we are given enough values to perform a ``partial key exposure attack`` therefore we can use ****Chinese Remainder Theorem (CRT)**** for the decryption, which is quite similar to the usual RSA decryption but with one different condition.
+From the first review We can see that we are given enough values to perform a ``partial key exposure attack`` therefore we can use ***Chinese Remainder Theorem (CRT)*** for the decryption, which is quite similar to the usual RSA decryption but with one different condition.
 
 The difference from the usual decryption and the RSA-CRT decryption is that here We use :
 
-****dp≡d(modp−1)****
+***dp≡d(modp−1)***
 
 instead of a single private key (d).
 
@@ -53,7 +53,7 @@ From some googling about the CRT-RSA decryption process I found the following in
 So as long as we know the lower half of the Least Significant Bits (LSBs) of dp, and e is of size poly(log(N)), we can get the factorization of the modulus in polynomial time.*
 
 We are already given the ***dp*** and ***e*** value, so that would make it easier for us to break the cipher quickly. 
-Having leaked the ****dp**** value, it means that I am already given the whole part of the private key so I have enough values to do the decryption.
+Having leaked the ***dp*** value, it means that I am already given the whole part of the private key so I have enough values to do the decryption.
 
 Moreover I found this really interesting and useful explaination over the CRT decryption process : [PDF](
 https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjm0OCLo8brAhXMiFwKHZqiD0QQFjAXegQIChAB&url=https%3A%2F%2Fdigitalcommons.aaru.edu.jo%2Fcgi%2Fviewcontent.cgi%3Farticle%3D1081%26context%3Dfcij&usg=AOvVaw3MdyU9f6exNWAP0ysWiKhg).
@@ -65,9 +65,9 @@ To rrearange to our needs that would be : ``edp−1=0(modp−1)``  meaning that 
 I can rewrite this as :
 ``edp−1=k(p−1)``, where ***k∈N*** and ***k<e***, since k(p−1) is a multiplication of edp − 1.
 
-For ****p**** we get : ``p = edp−1+k / k``
+For ***p*** we get : ``p = edp−1+k / k``
 
-Since the value of `e=65537`, it is possible to try every ****k**** in range of ****e**** until we get a value of ****k**** so that `Np=⌊Np⌋`, so we can make sure we have obtained the prime factor ****q**** and thus the factorization of ****N****.
+Since the value of `e=65537`, it is possible to try every ***k*** in range of ***e*** until we get a value of ***k*** so that `Np=⌊Np⌋`, so we can make sure we have obtained the prime factor ****q**** and thus the factorization of ***N***.
 
 To uncipher the given cipher I made the following ***Python3*** script based on the steps and equations explained above :
 
