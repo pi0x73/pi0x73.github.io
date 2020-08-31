@@ -18,11 +18,9 @@ tags:
 This was quite a good thought CTF with many interesting and tough challenges which I enjoyed while playing , however going to only make 2 challenge writeups on the following blog post.
 These ones looked very interesting to me.
 
-### One Part! [CRYPTOGRAPHIC]
+#### One Part! [CRYPTOGRAPHIC]
 ***Author : Semah BA***
-
-**Description** :
->*One part is secure ?*
+**Description** : >*One part is secure ?*
 
 We are only given the remote server to connect on , and see what is going on with that one challenge : ``onepart.fword.wtf 4445``.
 
