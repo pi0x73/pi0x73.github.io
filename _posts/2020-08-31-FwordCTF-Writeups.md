@@ -122,7 +122,7 @@ After executing the script in my machine I get the following results :
 
 To begin I started to search for ***@1337bloggs*** username on twitter but had no luck on plain sight, so I thought to start looking around for ***EwordTeam*** and came up with the following account in the same Social Media Platform :
 
-![ewordtwitter](url)
+![ewordtwitter](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/twitter-profile.png)
 
 Following the above profile , I was able to find the account mentioned in the challenge description as one of the followers of ***EwordTeam*** on twitter.
 Clicking on his ``tweet&replies`` we can see :
@@ -134,7 +134,7 @@ Seems like a challenge is provided in their CTFtime.org profile page in order to
 Upon searching with the ``ctftime`` provided url in the bio I see this information :
 >*Saved 2 times between August 26, 2020 and August 27, 2020.*
 
-![machine](url)
+![machine](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/old.png)
 
 
 I can see that pastebin link been there on 26 August but now its removed. Since the note in the tweet says that : 
@@ -155,15 +155,15 @@ Next Im going to visit CyberChef to decode the string.
 I can notice some very interesting header in the decoded string which looks like a JPG **magic byte**.
 
 Wikipedia Information : 
-![jpg](url)
+![jpg](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/jpg.png)
 
 I procced by saving the output on cyberchef as **challenge.jpg** and while opening I can see this :
-![chall](url)
+![chall](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/chef.png)
 
 I got surprised seeing this message as I have had the chance to travel in Montenegro before and I was able to recognize the place very quickly.
 My first thought would be of a review in [TripAdvisor](https://www.tripadvisor.com/) as this is where most of reviews for OSINT challenges are left usually so I started to look around for a topic on ``Hilton Podgorica`` in ***TripAdvisor*** and after finding it , I saw an interesting review from someone we need to find :
 
-![trip](url)
+![trip](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/trip.png)
 
 I clicked on his profile to grab some more possible information and quickly noticed this weird username : ``@check_my_instagram``
 and in Topics I noticed another possible username which could be used as an **Instagram** username. ``wokaihwokomaskustermann``
@@ -174,34 +174,8 @@ I am presented with this kinda empty instagram profile but I could notice a stor
 >*The one suggestion I have for instagram is to allow square sized profile pictures*
 so I thought the flag could be hidden in the full view of the profile picture :
 
-[flag](url)
+[flag](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/flag.png)
 Using the website above I was able to view the full profile picture and notice the flag lying in the bottom of the image.
 
 #### Flag
 ```Eword{c0ngraAatulationZzZz_aNd_w3lCom3_to_EwordTeam!}```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
