@@ -3,6 +3,7 @@ layout: single
 title: "Fword CTF 2020 Writeups"
 excerpt: "Writeups for 2 of the challenges from Fword 2020 CTF"
 date: 2020-08-31
+classes : wide
 header:
   teaser: /assets/images/fword-ctf/ctf.png
   teaser_home_page: true
