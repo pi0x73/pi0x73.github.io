@@ -112,9 +112,9 @@ print(binascii.unhexlify(hex(pow(c,d,N))[2:]))
 ```
 After executing the script in my machine I get the following results : 
 
-![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/result.png)
+![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/final.png)
 
-####Flag : 
+#### Flag : 
 ```FwordCTF{i_knew_it_its_not_secure_as_i_thought}```
 
 
