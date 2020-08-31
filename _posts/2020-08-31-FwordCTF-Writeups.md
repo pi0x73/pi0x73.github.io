@@ -64,11 +64,11 @@ From the process we know that : ``edp=1(modp−1)``
 To rrearange to our needs that would be : ``edp−1=0(modp−1)``  meaning that ``edp − 1`` divides ``p−1``.
 
 I can rewrite this as :
-``edp−1=k(p−1)``, where ***k∈N*** and ***k<e***, since k(p−1) is a multiplication of edp − 1.
+``edp−1=k(p−1)``, where ``k∈N`` and ``k<e``, since ``k(p−1)`` is a multiplication of ``edp − 1``.
 
 For ***p*** we get : ``p = edp−1+k / k``
 
-Since the value of `e=65537`, it is possible to try every ***k*** in range of ***e*** until we get a value of ***k*** so that `Np=⌊Np⌋`, so we can make sure we have obtained the prime factor ****q**** and thus the factorization of ***N***.
+Since the value of `e=65537`, it is possible to try every ***k*** in range of ***e*** until we get a value of ***k*** so that `Np=⌊Np⌋`, so we can make sure we have obtained the prime factor ***q*** and thus the factorization of ***N***.
 
 To uncipher the given cipher I made the following ***Python3*** script based on the steps and equations explained above :
 
