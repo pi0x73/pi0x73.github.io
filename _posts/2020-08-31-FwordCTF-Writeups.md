@@ -13,17 +13,18 @@ tags:
   - osint
 ---
 
-#### Overview
+## Overview
 This was quite a good thought CTF with many interesting and tough challenges which I enjoyed while playing , however going to only make 2 challenge writeups on the following blog post.
 These ones looked very interesting to me.
 
 ### One Part! [CRYPTOGRAPHIC]
-***Author : Semah BA***
+****Author : Semah BA****
 
 **Description** :
 >*One part is secure ?*
 
 We are only given the remote server to connect on , and see what is going on with that one challenge : ``onepart.fword.wtf 4445``
+
 We can use ****netcat**** to connect to the remote server and grab some information :
 ```sh
 pwn@ubuntu:~/CTF/fword$ nc onepart.fword.wtf 4445
@@ -52,7 +53,7 @@ From some googling about the CRT-RSA decryption process I found the following in
 So as long as we know the lower half of the Least Significant Bits (LSBs) of dp, and e is of size poly(log(N)), we can get the factorization of the modulus in polynomial time.*
 
 We are already given the ***dp*** and ***e*** value, so that would make it easier for us to break the cipher quickly. 
-Having leaked the ****dp**** value it means that I am already given the whole part of the private key so I have enough values to do the decryption.
+Having leaked the ****dp**** value, it means that I am already given the whole part of the private key so I have enough values to do the decryption.
 
 Moreover I found this really interesting and useful explaination over the CRT decryption process : [PDF](
 https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjm0OCLo8brAhXMiFwKHZqiD0QQFjAXegQIChAB&url=https%3A%2F%2Fdigitalcommons.aaru.edu.jo%2Fcgi%2Fviewcontent.cgi%3Farticle%3D1081%26context%3Dfcij&usg=AOvVaw3MdyU9f6exNWAP0ysWiKhg).
