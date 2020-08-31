@@ -18,14 +18,14 @@ This was quite a good thought CTF with many interesting and tough challenges whi
 These ones looked very interesting to me.
 
 ### One Part! [CRYPTOGRAPHIC]
-****Author : Semah BA****
+***Author : Semah BA***
 
 **Description** :
 >*One part is secure ?*
 
 We are only given the remote server to connect on , and see what is going on with that one challenge : ``onepart.fword.wtf 4445``.
 
-We can use ****netcat**** to connect to the remote server and grab some information :
+We can use ***netcat*** to connect to the remote server and grab some information :
 ```sh
 pwn@ubuntu:~/CTF/fword$ nc onepart.fword.wtf 4445
 
