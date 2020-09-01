@@ -115,9 +115,9 @@ After executing the script in my machine I get the following results :
 #### Flag : 
 ```FwordCTF{i_knew_it_its_not_secure_as_i_thought}```
 
-### Identity Fraud [OSINT]
+## Identity Fraud [OSINT]
 
-***Author: Cyb3rDoctor***
+**Author: Cyb3rDoctor**
 
 **Description** : 
 >*Someone stole our logo and created a team named "Eword". In order to find him, I created a fake twitter account (@1337bloggs) to join Eword team. Fortunately, they replied to the fake account and gave me a task to solve. So, if I solve it, they will accept me as a team member. ... Can you help me in solving the task?*
