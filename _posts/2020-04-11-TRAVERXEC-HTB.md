@@ -6,6 +6,7 @@ date: 2020-04-11
 header:
   teaser: /assets/images/traverxec-walkthrough/traverxec.png
   teaser_home_page: true
+  classes: wide
 categories:
   - hackthebox
   - infosec
