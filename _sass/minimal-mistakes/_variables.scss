@@ -118,24 +118,24 @@ $masthead-link-color: $primary-color !default;
 $masthead-link-color-hover: mix(#000, $primary-color, 25%) !default;
 $navicon-link-color-hover: mix(#fff, $primary-color, 75%) !default;
 
-/* dracula syntax highlighting (base16) */
-/* https://github.com/dracula/base16-dracula-scheme */
-$base00: #282936 !default;
-$base01: #3a3c4e !default;
-$base02: #4d4f68 !default;
-$base03: #626483 !default;
-$base04: #62d6e8 !default;
-$base05: #e9e9f4 !default;
-$base06: #f1f2f8 !default;
-$base07: #f7f7fb !default;
-$base08: #ea51b2 !default;
-$base09: #b45bcf !default;
-$base0a: #00f769 !default;
-$base0b: #ebff87 !default;
-$base0c: #a1efe4 !default;
-$base0d: #62d6e8 !default;
-$base0e: #b45bcf !default;
-$base0f: #00f769 !default;
+/* contrast syntax highlighting (base16) */
+$base00: #000000;
+$base01: #242422;
+$base02: #484844;
+$base03: #6c6c66;
+$base04: #918f88;
+$base05: #b5b3aa;
+$base06: #d9d7cc;
+$base07: #fdfbee;
+$base08: #ff6c60;
+$base09: #e9c062;
+$base0a: #ffffb6;
+$base0b: #a8ff60;
+$base0c: #c6c5fe;
+$base0d: #96cbfe;
+$base0e: #ff73fd;
+$base0f: #b18a3d;
+
 
 
 /*
