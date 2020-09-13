@@ -11,16 +11,12 @@ categories:
   - ctf
 tags:
   - crypto
-  - osint
 ---
 
 ![fword](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/fword.png)
 
-## Overview
-This was quite a good thought CTF with many interesting and tough challenges which I enjoyed while playing , however going to only make 2 challenge writeups on the following blog post.
-These ones looked very interesting to me.
 
-## One Part! [CRYPTOGRAPHIC]
+## One Part! [CRYPTO]
 ***Author : Semah BA***
 
 **Description** : 
@@ -29,7 +25,7 @@ These ones looked very interesting to me.
 We are only given the remote server to connect on , and see what is going on with that one challenge : ``onepart.fword.wtf 4445``.
 
 We can use ***netcat*** to connect to the remote server and grab some information :
-```sh
+```
 pwn@ubuntu:~/CTF/fword$ nc onepart.fword.wtf 4445
 
 	Welcome to my secure Land !!! 
@@ -117,71 +113,3 @@ After executing the script in my machine I get the following results :
 
 #### Flag : 
 ```FwordCTF{i_knew_it_its_not_secure_as_i_thought}```
-
-## Identity Fraud [OSINT]
-
-**Author: Cyb3rDoctor**
-
-**Description** : 
->*Someone stole our logo and created a team named "Eword". In order to find him, I created a fake twitter account (@1337bloggs) to join Eword team. Fortunately, they replied to the fake account and gave me a task to solve. So, if I solve it, they will accept me as a team member. ... Can you help me in solving the task?*
-
-To begin I started to search for ***@1337bloggs*** username on twitter but had no luck on plain sight, so I thought to start looking around for ***EwordTeam*** and came up with the following account in the same Social Media Platform :
-
-![ewordtwitter](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/twitter-profile.png)
-
-Following the above profile , I was able to find the account mentioned in the challenge description as one of the followers of ***EwordTeam*** on twitter.
-Clicking on his ``tweet&replies`` we can see :
-
-![tweets](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/tweets.png)
-
-Seems like a challenge is provided in their CTFtime.org profile page in order to join the team but everything was empty there so we could use [Wayback Machine](https://archive.org/web/) to see for previous changes in the page.
-
-Upon searching with the ``ctftime`` provided url in the bio I see this information :
->*Saved 2 times between August 26, 2020 and August 27, 2020.*
-
-![machine](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/old.png)
-
-
-I can see that pastebin link been there on 26 August but now its removed. Since the note in the tweet says that : 
-```Important note: Take a screenshot of the page, then tell us when you do that, because we will delete it before anyone see it.```
-then this should probably be the challenge it was being talked about.
-
-I visit the pastebin given url and get the following message : 
->*Hi Fred,
- You said that you are good in OSINT. So, you need to prove your skills to join Eword.
- Your task: Find the leader of Eword, then find the flag in one of his social media accounts.
- Hint:https://pastebin.com/PZvaSjA0*
- 
-I am provided with another pastebin url so I go to visit that one too and get a very long base64 string.
-Next Im going to visit CyberChef to decode the string. 
-
-![chef](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/chef.png)
-
-I can notice some very interesting header in the decoded string which looks like a JPG **magic byte**.
-
-Wikipedia Information : 
-![jpg](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/jpg.png)
-
-I procced by saving the output on cyberchef as **challenge.jpg** and while opening I can see this :
-![chall](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/chall.png)
-
-I got surprised seeing this message as I have had the chance to travel in Montenegro before and I was able to recognize the place very quickly.
-My first thought would be of a review in [TripAdvisor](https://www.tripadvisor.com/) as this is where most of reviews for OSINT challenges are left usually so I started to look around for a topic on ``Hilton Podgorica`` in ***TripAdvisor*** and after finding it , I saw an interesting review from someone we need to find :
-
-![trip](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/trip.png)
-
-I clicked on his profile to grab some more possible information and quickly noticed this weird username : ``@check_my_instagram``
-and in Topics I noticed another possible username which could be used as an **Instagram** username. ``wokaihwokomaskustermann``
-
-[https://www.instagram.com/wokaihwokomaskustermann/](https://www.instagram.com/wokaihwokomaskustermann/)
-
-I am presented with this kinda empty instagram profile but I could notice a story posted saying : 
->*The one suggestion I have for instagram is to allow square sized profile pictures*
-
-so I thought the flag could be hidden in the full view of the profile picture :
-
-![flag](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/fword-ctf/flag.png)
-Using the website above I was able to view the full profile picture and notice the flag lying in the bottom of the image.
-
-#### Flag
-```Eword{c0ngraAatulationZzZz_aNd_w3lCom3_to_EwordTeam!}```
