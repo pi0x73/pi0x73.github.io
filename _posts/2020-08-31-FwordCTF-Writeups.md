@@ -71,6 +71,7 @@ Since the value of `e=65537`, it is possible to try every ***k*** in range of **
 To uncipher the given cipher I made the following ***Python3*** script based on the steps and equations explained above :
 
 {% highlight python %}
+
 import binascii
 import string
 
