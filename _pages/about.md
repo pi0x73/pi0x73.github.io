@@ -6,16 +6,15 @@ classes : wide
 author_profile : true
 ---
 ## $whoami
-student, researcher, developer (C/C++ , Python , JavaScript), pentester , blogger.  
+student, security researcher, developer (C/C++ , Python), pentester , blogger.  
 usually participate in competitions and CTFs about cybersecurity.  
 I use this blog as a personal portfolio , archive my achievements and share blogs and walkthroughs that I find interesting.  
 
 ## Profiles & References
 HackTheBox [https://www.hackthebox.eu/profile/111862](https://www.hackthebox.eu/profile/111862)  
-Github [https://github.com/pi0x73](https://github.com/pi0x73)  
 Linkedin [https://www.linkedin.com/in/suljotgjoka/](https://www.linkedin.com/in/suljotgjoka/)  
 
-## Support 
+## $support 
 This blog is created in partnership with 0 ads!  
 If you like my work I would be more than happy if you donated some bucks.  
 
