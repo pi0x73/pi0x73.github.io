@@ -2,6 +2,8 @@
 title: "About Me"
 permalink: /about/
 layout : single
+classes : wide
+author_profile : true
 ---
 ## Whoami
 student, researcher, developer (C/C++ , Python , JavaScript), pentester , blogger.  
