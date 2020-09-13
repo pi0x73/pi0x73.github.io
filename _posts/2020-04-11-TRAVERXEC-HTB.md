@@ -3,10 +3,11 @@ layout: single
 title: "Hack The Box Write-up #1 : Traverxec"
 excerpt: "My walkthrough of Traverxec Machine from HackTheBox"
 date: 2020-04-11
+classes: wide
+
 header:
   teaser: /assets/images/traverxec-walkthrough/traverxec.png
   teaser_home_page: true
-  classes: wide
 categories:
   - hackthebox
   - infosec
