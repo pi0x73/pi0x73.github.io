@@ -114,19 +114,15 @@ After logging in by making use of the anonymous ftp login I was presented with t
 
 >*Nathan,
 I left your Passwords.txt file on your Desktop.  Please remove this once you have edited it yourself and place it back into the secure folder.
-Regards
-
-Nadine*
+Regards , Nadine*
 
 - Notes to do.txt
 
-
->*1) Change the password for NVMS - Complete
-2) Lock down the NSClient Access - Complete
-3) Upload the passwords
-4) Remove public access to NVMS
-5) Place the secret files in SharePoint*
-
+>1) Change the password for NVMS - Complete
+>2) Lock down the NSClient Access - Complete
+>3) Upload the passwords
+>4) Remove public access to NVMS
+>5) Place the secret files in SharePoint*
 There seems to be an useful information for some passwords stored on Nathan Desktop folder which we should keep in mind.
 
 ### Web
