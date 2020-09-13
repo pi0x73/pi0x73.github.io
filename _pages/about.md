@@ -5,7 +5,7 @@ layout : single
 classes : wide
 author_profile : true
 ---
-## Whoami
+## $whoami
 student, researcher, developer (C/C++ , Python , JavaScript), pentester , blogger.  
 usually participate in competitions and CTFs about cybersecurity.  
 I use this blog as a personal portfolio , archive my achievements and share blogs and walkthroughs that I find interesting.  
@@ -14,16 +14,6 @@ I use this blog as a personal portfolio , archive my achievements and share blog
 HackTheBox [https://www.hackthebox.eu/profile/111862](https://www.hackthebox.eu/profile/111862)  
 Github [https://github.com/pi0x73](https://github.com/pi0x73)  
 Linkedin [https://www.linkedin.com/in/suljotgjoka/](https://www.linkedin.com/in/suljotgjoka/)  
-
-#### HackTheBox
-[HTB](https://hackthebox.eu/register) is an online hacking/learning platform with over 300,000 users currently and still counting.
-I usually spend time testing my skills through their challenges and vulnerable machines.  
-My highest ranking worldwide was 9th in 2020 May :  
-
-![ranking](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/ranking.jpg)
-
-## Contact
-[suljotgjokaaa@gmail.com](mailto:suljotgjokaaa@gmail.com)
 
 ## Support 
 This blog is created in partnership with 0 ads!  
