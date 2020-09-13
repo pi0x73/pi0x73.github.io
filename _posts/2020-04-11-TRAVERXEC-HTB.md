@@ -180,9 +180,3 @@ This happened to work perfectly … and now we have a shell executed as root .
 ![root](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/traverxec-walkthrough/t18.png)
 
 This way we can easily navigate to root folder and grab the root flag.
-
-### TRAVERXEC WAS INDEED A GOOD EASY BOX AND WE ENJOYED IT MAXIMALLY WHILE NAVIGATING THROUGH THE STEPS.
-
-## THANK YOU FOR READING !
-
-![profile](https://www.hackthebox.eu/badge/image/111862)
