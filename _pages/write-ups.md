@@ -5,6 +5,7 @@ layout : single
 classes : wide
 author_profile : true
 ---
+This is a dedicated page collecting the writeups and walkthroughs I have shared in the blog , each one split in it's respective category 
 
 ## Vulnhub
 
