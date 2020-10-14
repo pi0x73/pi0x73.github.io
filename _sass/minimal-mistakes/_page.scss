@@ -108,7 +108,7 @@ body {
   p,
   li,
   dl {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   /* paragraph indents */
@@ -297,6 +297,12 @@ body {
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
+}
+
+.page__meta-sep::before {
+  content: "\2022";
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 /*
