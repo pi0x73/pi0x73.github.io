@@ -3,7 +3,6 @@ layout: single
 title: "Hack The Box Write-up #2 : ServMon"
 excerpt: "My walkthrough of ServMon Machine from HackTheBox"
 date: 2020-06-20
-classes : wide
 header:
   teaser: /assets/images/servmon-walkthrough/servmon.PNG
   teaser_home_page: true
