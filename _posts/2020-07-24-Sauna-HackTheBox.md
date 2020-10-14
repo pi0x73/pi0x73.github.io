@@ -8,14 +8,14 @@ header:
   teaser_home_page: true
 
 classes: wide
+toc : true
 categories:
   - hackthebox
   - infosec
 tags:  
   - windows
   - activedirectory
-- redteam
-toc : true
+  - redteam
 ---
 
 ![Card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/sauna-walkthrough/sauna.png)
