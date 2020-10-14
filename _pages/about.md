@@ -18,6 +18,5 @@ Linkedin [https://www.linkedin.com/in/suljotgjoka/](https://www.linkedin.com/in/
 This blog is created in partnership with 0 ads!  
 If you like my work I would be more than happy if you donated some bucks.  
 
-{% include support.html %}
 
 
