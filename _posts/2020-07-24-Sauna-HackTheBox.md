@@ -14,7 +14,8 @@ categories:
 tags:  
   - windows
   - activedirectory
-  - redteam
+- redteam
+toc : true
 ---
 
 ![Card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/sauna-walkthrough/sauna.png)
