@@ -5,6 +5,8 @@ excerpt: "My walkthrough of Sauna Machine from HackTheBox"
 date: 2020-07-24
 header:
   teaser: /assets/images/sauna-walkthrough/sauna.png
+  teaser_home_page: true
+
 classes: wide
 categories:
   - hackthebox
