@@ -195,4 +195,3 @@ Seems like user ``Taviso`` has permission to run any command as sudo and seems l
 I really liked this machine and I was so excited to try out an Albanian Machine. 
 
 
-{% include support.html %}
