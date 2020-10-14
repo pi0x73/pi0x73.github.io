@@ -6,7 +6,6 @@ date: 2020-07-24
 classes: wide
 header:
   teaser: /assets/images/sauna-walkthrough/sauna.png
-  teaser_home_page: true
 categories:
   - hackthebox
   - infosec
