@@ -3,7 +3,6 @@ layout: single
 title: "Vulnhub Write-up #2 : HackDay-Albania"
 excerpt: "Writeup for 'HackDay-Albania' machine from vulnhub. This machine has quite an interesting walkthrough with beginner to intermediate level steps. Starts with a vulnerable bank from where we can drop a reverse shell and then write to /etc/passwd to escalate to root."
 date: 2020-05-06
-classes: wide
 header:
   teaser: /assets/images/Stripe-Vulnhub/vulnhub.png
   teaser_home_page: true
