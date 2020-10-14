@@ -136,5 +136,4 @@ Any feedback or suggestion is appreciated!
 
 Do you like my work?  
 
-{% include support.html %}
 
