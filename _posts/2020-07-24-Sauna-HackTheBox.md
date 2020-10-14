@@ -3,9 +3,9 @@ layout: single
 title: "Hack The Box Write-up #3 : Sauna"
 excerpt: "My walkthrough of Sauna Machine from HackTheBox"
 date: 2020-07-24
-classes: wide
 header:
   teaser: /assets/images/sauna-walkthrough/sauna.png
+classes: wide
 categories:
   - hackthebox
   - infosec
