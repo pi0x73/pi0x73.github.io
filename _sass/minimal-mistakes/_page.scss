@@ -512,12 +512,12 @@ body {
   border-top: 1px solid $border-color;
 
   @include breakpoint($large) {
-    float: left;
-    width: 80%;
+    float: middle;
+    width: 100%;
   }
 
   @include breakpoint($x-large) {
-    width: 80%;
+    width: 100%;
   }
 
   a {
