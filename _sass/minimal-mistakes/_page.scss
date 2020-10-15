@@ -39,13 +39,13 @@ body {
   @include breakpoint($large) {
     float: middle;
     width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
+    padding-right: 0;
    
   }
 
   @include breakpoint($x-large) {
     width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
+    padding-right: 0;
    
   }
 
@@ -516,12 +516,12 @@ body {
   @include breakpoint($large) {
     float: middle;
     width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
+    padding-right: 0;
   }
 
   @include breakpoint($x-large) {
     width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
+    padding-right: 0;
   }
 
   a {
