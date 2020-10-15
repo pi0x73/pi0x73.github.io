@@ -10,7 +10,7 @@
   padding-right: 1em;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
-  max-width: 80%;
+  max-width: 100%;
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
 
@@ -38,12 +38,14 @@ body {
 .page {
   @include breakpoint($large) {
     float: middle;
-    width: 50%;
+    width: calc(100% - #{$right-sidebar-width-narrow});
+    padding-right: $right-sidebar-width-narrow;
    
   }
 
   @include breakpoint($x-large) {
-    width: 80%;
+    width: calc(100% - #{$right-sidebar-width-narrow});
+    padding-right: $right-sidebar-width-narrow;
    
   }
 
@@ -513,11 +515,13 @@ body {
 
   @include breakpoint($large) {
     float: middle;
-    width: 100%;
+    width: calc(100% - #{$right-sidebar-width-narrow});
+    padding-right: $right-sidebar-width-narrow;
   }
 
   @include breakpoint($x-large) {
-    width: 100%;
+    width: calc(100% - #{$right-sidebar-width-narrow});
+    padding-right: $right-sidebar-width-narrow;
   }
 
   a {
