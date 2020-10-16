@@ -6,7 +6,7 @@ date: 2020-07-24
 classes: wide
 header:
   tagline: "Writeup for Sauna , HacktheBox"
-  overlay_image: /assets/images/sauna-walkthrough/background.png
+  overlay_image: /assets/images/background.jpg
   overlay_filter: 0.5
   teaser: /assets/images/sauna-walkthrough/sauna.png
   teaser_home_page: true
