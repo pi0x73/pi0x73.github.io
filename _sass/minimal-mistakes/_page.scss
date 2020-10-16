@@ -514,12 +514,12 @@ body {
   @include breakpoint($large) {
     float: middle;	  
     width: 80%;
-    padding-left: 10em	  
+    	  
   }
 
   @include breakpoint($x-large) {
     width: 80%;
-    padding-left: 10em  
+      
   }
 
   a {
