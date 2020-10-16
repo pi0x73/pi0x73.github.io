@@ -3,6 +3,8 @@ layout: single
 title: "Hack The Box Write-up #2 : ServMon"
 excerpt: "My walkthrough of ServMon Machine from HackTheBox"
 date: 2020-06-20
+toc: true
+toc_sticky: true
 header:
   teaser: /assets/images/servmon-walkthrough/servmon.PNG
   teaser_home_page: true
@@ -18,6 +20,7 @@ tags:
 
 ## Enumeration
 
+### nmap
 As always I started by firing up a nmap scan against the host and came up with the following results : 
 
 ```
@@ -107,26 +110,23 @@ PORT      STATE SERVICE       VERSION
 
 There seem to be a few holes that could get me inside the machine , but the most suspicious of them where I could gather a little more information for free , seems that allowed `anonymous login` on the ftp server.
 
+### ftp
 After logging in by making use of the anonymous ftp login I was presented with the users folder (Nathan and Nadine) , with both of them having a note saved in text files in their folders : ``Confidental.txt`` and ``Notes to do.txt`` with the following content :
 
 - Confidental.txt
 
->Nathan,
->I left your Passwords.txt file on your Desktop.  Please remove this once you have edited it yourself and place it back into the secure folder.
->Regards, 
->Nadine
+**Nathan,
+I left your Passwords.txt file on your Desktop.  Please remove this once you have edited it yourself and place it back into the secure folder.
+Regards, 
+Nadine**
 
 - Notes to do.txt
 
->1) Change the password for NVMS - Complete
-
->2) Lock down the NSClient Access - Complete
-
->3) Upload the passwords
-
->4) Remove public access to NVMS
-
->5) Place the secret files in SharePoint*
+**1) Change the password for NVMS - Complete**
+**2) Lock down the NSClient Access - Complete**
+**3) Upload the passwords**
+**4) Remove public access to NVMS**
+**5) Place the secret files in SharePoint**
 
 There seems to be an useful information for some passwords stored on Nathan Desktop folder which we should keep in mind.
 
@@ -153,6 +153,8 @@ Matching Modules
 
 The dots starting to connect!
 I came up with a directory traversal exploit for the following NVMS version that could help me grab the previously mentioned ``Passwords.txt`` from Nathan's desktop folder.
+
+### metasploit
 
 We move on by setting the needed options to the metasploit module and giving it a go : 
 
@@ -188,6 +190,8 @@ Gr4etN3w5w17hMySk1Pa5$
 The exploit was succesful and I was able to dump a collection of possible passwords I could use against SSH protocol with the usernames I have.
 
 ``nadine:L1k3B1gBut7s@W0rk`` were the valid creds from the bruteforcing and with that working up , I am able to grab the user flag and move on to root.
+
+### ssh
 
 ```
 Microsoft Windows [Version 10.0.18363.752]
@@ -232,7 +236,7 @@ nadine@SERVMON C:\>dir "Program Files"
 
 ``NSClient`` seems interesting so I started googling about it and came up with an easy step-by-step I found in [exploitdb](https://www.exploit-db.com/exploits/46802)
 
-### Exploitation
+### NSClient Exploitation
 
 We start by exploring and gathering the informations we need in order to make the exploit work.
 
@@ -284,6 +288,8 @@ I made a file named pi.bat in my kali with the lines suggested from the exploit 
 Next thing , I am going to add a new script in the application named ``whatever u want`` which calls the script I saved in `C:\Temp`
 
 ![evil](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/servmon-walkthrough/evil-servmon.png)
+
+### root-shell
 
 As seen above I named my newly added script as `command` and now I can send this command to the console and expect a reverse shell as system.
 
