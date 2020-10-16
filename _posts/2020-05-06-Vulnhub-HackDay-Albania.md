@@ -23,12 +23,15 @@ tags:
   - write-perm
 ---
 
+## Summary
 
 In this writeup we are looking at HackDay-Albania from Vulnhub.
 I spent time to complete this VM as it took my atention as the first Albanian VM I have ever seen since I am an albanian too and would be interested to take a look. This machine has quite an interesting walkthrough with beginner to intermediate level steps.
 Starts with a vulnerable bank from where we can drop a reverse shell and then write to /etc/passwd to escalate to root. Lets dig in:
 
 ## Enumeration 
+
+### nmap
 As always starting with a nmap scan after setting up the image to virtualbox and powering it on we get those results :
 ```
 root@kali:~# nmap -sC -A 192.168.1.6
@@ -68,6 +71,7 @@ Nmap done: 1 IP address (1 host up) scanned in 9.65 seconds
 Port 22 (SSH) and Port 8008 (HTTP) opened...
 The HTTP Server comes up with a bunch of random word directories which seem weird to me.
 
+### Website
 I firstly tried to navigate to the HTTP server and look for something around : 
 
 ![message](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/HackDay-Vulnhub/1.png)
@@ -99,6 +103,8 @@ I tried to navigate to ``/unisxcudkqjydw/vulnbank`` and it seemed like it was a 
 Accessing ``client/`` shows the following site :
 
 ![client](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/HackDay-Vulnhub/4.png)
+
+### SQL Injection
 
 A login page which is probably vulnerable to sql injection , however the usual manual injections didnt work so I decided to fire sqlmap against it :
 
@@ -148,6 +154,8 @@ Woaah!! Nice password over there , but not the correct one to `su` as ``taviso``
 
 2 more useless passwords appeared which again didnt work , so I began to enumerate more...
 
+### write permissions
+
 I was trying to find writable permissions when I found something interesting :
 ```
 www-data@hackday:/$ ls -la /etc/passwd
@@ -195,6 +203,7 @@ User taviso may run the following commands on hackday:
     (ALL : ALL) ALL
 taviso@hackday:/tmp$ 
 ```
+### root shell
 
 Seems like user ``Taviso`` has permission to run any command as sudo and seems like we can simply use ``sudo su`` to grab a root shell:
 
