@@ -39,12 +39,12 @@ body {
   @include breakpoint($large) {
     float: left;	  
     width: 75%;
-    padding-left: 5em;
+    padding-left: 3em;
   }
 
   @include breakpoint($x-large) {
     width: 80%;
-    padding-right: 5em;
+    padding-right: 7em;
   }
 
   .page__inner-wrap {
