@@ -8,8 +8,12 @@ header:
   tagline: "Writeup for Sauna , HacktheBox"
   overlay_image: /assets/images/background.jpg
   overlay_filter: 0.5
+  actions:
+    - label: "More Info"
+      url: "https://www.hackthebox.eu/home/machines/profile/229"
   teaser: /assets/images/sauna-walkthrough/sauna.png
   teaser_home_page: true
+  
 categories:
   - hackthebox
   - infosec
