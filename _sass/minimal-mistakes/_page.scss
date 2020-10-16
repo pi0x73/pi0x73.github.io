@@ -39,7 +39,7 @@ body {
   @include breakpoint($large) {
     float: right;	  
     width: 75%;
-    padding-left: 1em;
+    padding-left: 0.8em;
   }
 
   @include breakpoint($x-large) {
