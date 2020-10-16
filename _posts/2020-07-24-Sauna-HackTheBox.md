@@ -5,6 +5,7 @@ excerpt: "Sauna was quite a fun and interesting machine to do provided by HackTh
 date: 2020-07-24
 classes: wide
 header:
+  overlay_image: /assets/images/sauna-walkthrough/background.png
   teaser: /assets/images/sauna-walkthrough/sauna.png
   teaser_home_page: true
 categories:
