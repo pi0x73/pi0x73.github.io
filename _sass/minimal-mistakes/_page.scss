@@ -506,7 +506,7 @@ body {
 
 .page__related {
   @include clearfix();
-  float: middle;
+  float: right;
   margin-top: 2em;
   padding-top: 1em;
   border-top: 1px solid $border-color;
