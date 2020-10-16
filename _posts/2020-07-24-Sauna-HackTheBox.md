@@ -3,7 +3,6 @@ layout: single
 title: "Hack The Box Write-up #3 : Sauna"
 excerpt: "Writeup for Sauna , HacktheBox"
 date: 2020-07-24
-classes: wide
 header:
   tagline: "Writeup for Sauna , HacktheBox"
   overlay_image: /assets/images/background.jpg
