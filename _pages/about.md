@@ -2,7 +2,6 @@
 title: "About Me"
 permalink: /about/
 layout : splash
-classes : wide
 author_profile : true
 ---
 ## $whoami
