@@ -39,7 +39,7 @@ body {
   @include breakpoint($large) {
     float: middle;	  
     width: 80%;
-    padding-left: 10em;
+    padding-left: 11em;
   }
 
   @include breakpoint($x-large) {
@@ -506,7 +506,7 @@ body {
 
 .page__related {
   @include clearfix();
-  float: left;
+  float: middle;
   margin-top: 2em;
   padding-top: 1em;
   border-top: 1px solid $border-color;
