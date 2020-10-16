@@ -39,7 +39,7 @@ body {
   @include breakpoint($large) {
     float: middle;	  
     width: 75%;
-    padding-left: 4em;
+    padding-left: 7em;
   }
 
   @include breakpoint($x-large) {
@@ -512,7 +512,7 @@ body {
   border-top: 1px solid $border-color;
 
   @include breakpoint($large) {
-    float: right;	  
+    float: middle;	  
     width: calc(100% - #{$right-sidebar-width-narrow});
   }
 
