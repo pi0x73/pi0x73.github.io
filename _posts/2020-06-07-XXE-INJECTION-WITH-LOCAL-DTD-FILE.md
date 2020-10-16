@@ -3,6 +3,8 @@ layout: single
 title: "XXE injection with local DTD file and PHP filter."
 excerpt: "A short brief explaination + walkthrough for XXE injection attack and how it works."
 date: 2020-06-07
+toc: true
+toc_sticky: true
 header:
   teaser: /assets/images/xxe-injection/xxe.png
   teaser_home_page: true
