@@ -4,6 +4,7 @@ title: "Vulnhub Write-up #2 : HackDay-Albania"
 excerpt: "Writeup for Hackday-Albania, a nice built and easy linux machine provided from Vulnhub"
 date: 2020-05-06
 toc: true
+toc_sticky: true
 header:
   tagline: "Writeup for Hackday-Albania, a nice built and easy linux machine provided from Vulnhub"
   overlay_image: /assets/images/background.png
