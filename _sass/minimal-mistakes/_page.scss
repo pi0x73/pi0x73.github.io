@@ -38,12 +38,12 @@ body {
 .page {
   @include breakpoint($large) {
     float: middle;	  
-    width: 80%;
+    width: 90%;
     padding-left: 11em;
   }
 
   @include breakpoint($x-large) {
-    width: 80%;
+    width: 90%;
     padding-right: 0em;
   }
 
@@ -513,12 +513,12 @@ body {
 
   @include breakpoint($large) {
     float: middle;	  
-    width: 80%;
+    width: 100%;
     	  
   }
 
   @include breakpoint($x-large) {
-    width: 80%;
+    width: 100%;
       
   }
 
