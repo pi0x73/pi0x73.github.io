@@ -44,7 +44,7 @@ body {
 
   @include breakpoint($x-large) {
     width: 75%;
-    padding-right: 1em;
+    padding-right: 0.8em;
   }
 
   .page__inner-wrap {
