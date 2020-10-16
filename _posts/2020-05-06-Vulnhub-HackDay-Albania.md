@@ -1,12 +1,13 @@
 ---
 layout: single
 title: "Vulnhub Write-up #2 : HackDay-Albania"
-excerpt: "Writeup for 'HackDay-Albania' machine from vulnhub. This machine has quite an interesting walkthrough with beginner to intermediate level steps. Starts with a vulnerable bank from where we can drop a reverse shell and then write to /etc/passwd to escalate to root."
+excerpt: "Writeup for Hackday-Albania, a nice built and easy linux machine provided from Vulnhub"
 date: 2020-05-06
+toc: true
 header:
   tagline: "Writeup for Hackday-Albania, a nice built and easy linux machine provided from Vulnhub"
   overlay_image: /assets/images/background.png
-  overlay_filter: 0.5
+  overlay_filter: 0.7
   actions:
     - label: "More Info"
       url: https://vulnhub.com/entry/hackday-albania,167/
