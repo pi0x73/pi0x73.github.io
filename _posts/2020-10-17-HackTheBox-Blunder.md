@@ -96,6 +96,7 @@ The above exploit needs at least the username parameter in order to do bruteforc
 ### Directory Fuzzing
 
 I decided to start fuzzing the webpage for any possible leftovers or interesting files
+
 ![fuzzing](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/directory-bf.png)
 
 After some time I find 2 interesting leads :
@@ -109,7 +110,8 @@ After some time I find 2 interesting leads :
 
 ## Initial Foothold
 
-I finally have an username (**fergus**) provided from the todo leftover and the login page. This way I can take a look on the exploit now.
+I finally have an username (**fergus**) provided from the todo leftover and the login page. 
+This way I can take a look on the exploit now.
 
 ### bruteforcing
 
@@ -123,9 +125,11 @@ root@kali:~# ls -la wordlist.txt
 ```
 
 I then copied the script in the previous blog localy and changed the parameters to my needs :
+
 ![exploit](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/exploit.png)
 
 Running the exploit I get some correct credentials after a while :
+
 ![bf](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/bf.png)
 
 ``fergus:RolandDeschain``
@@ -134,7 +138,8 @@ Obviously I can use those creds to login on ``/admin`` and access the dashboard 
 
 ![dashboard](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/dashboard.png)
 
-While searching for a possible vulnerability previously I also found [CVE-2019-16113](http://cve.circl.lu/cve/CVE-2019-16113)
+While searching for a possible vulnerability previously I also found [CVE-2019-16113](http://cve.circl.lu/cve/CVE-2019-16113),
+
 Another vulnerability (remote command execution) for the **Bludit 3.9.2** version.
 
 I'm going to use metasploit to do that to speed things up, but I recommed doing this one exploit manually as it learned me a few new tricks.
@@ -156,7 +161,9 @@ After running the exploit we grab a low-privileged shell to the machine :
 ![www-data](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/metasploit.png)
 
 Using the shell I just grabbed from the exploit I started to look for possible interesting paths on the machine.
+
 There seems to be a newer version of Bludit (**3.10**) already installed on the machine but not yet set up on the blog.
+
 Navigating on it I grabbed a very useful hash from **users.php**
 
 ```php
@@ -214,10 +221,12 @@ User hugo may run the following commands on blunder:
 hugo@blunder:~$
 ```
 From the above information seems like **hugo** is  configured to run sudo commands as anyone except root.
+
 This configuration reminds me of an old sudo CVE where we could use something like : ``sudo -u#-1 /bin/bash`` to drop ourselves a root shell.
 
 ### root shell
 I attempted the same exploit on the machine to see if  I could get any results :
+
 ![root-shell](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/root-shell.png)
 
 And with that being the last part of the writeup , We just owned root and can easily grab the root flag!
