@@ -184,3 +184,10 @@ cat users.php
         "gitlab": ""}
 }
 ```
+
+## User Escalation
+
+Hugo, the user which the hash corresponds to, appears to be a system user as well.
+Using [https://md5decrypt.net/](https://md5decrypt.net/) I was able to crack the hash : **faca404fd5c0a31cf1897b823c695c85cffeb98d : Password120**
+
+![user](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/user.png)
