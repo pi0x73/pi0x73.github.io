@@ -88,3 +88,16 @@ Viewing the source of the webpage reveals things that could be useful :
 ```
 
 The webpage seems to be running under **Bludit CMS** and the revealed version seems to be **3.9.2**
+
+Upon googling the found information I found an interesting **CVE** under this version of **Bludit** : [https://rastating.github.io/bludit-brute-force-mitigation-bypass/](https://rastating.github.io/bludit-brute-force-mitigation-bypass/)
+
+The above exploit needs at least the username parameter in order to do bruteforcing and yet we dont have any.
+
+### Directory Fuzzing
+
+I decided to start fuzzing the webpage for any possible leftovers or interesting files
+![fuzzing](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/directory-bf.png)
+
+After some time I find 2 interesting leads :
+- /admin
+- /todo.txt
