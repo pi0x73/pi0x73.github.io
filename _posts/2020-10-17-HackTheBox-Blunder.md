@@ -100,4 +100,9 @@ I decided to start fuzzing the webpage for any possible leftovers or interesting
 
 After some time I find 2 interesting leads :
 - /admin
+
+![admin](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/bl-admin.png)
+
 - /todo.txt
+
+![todo](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/todo.png)
