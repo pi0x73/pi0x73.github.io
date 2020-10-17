@@ -7,10 +7,5 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-.sticky,
-.sidebar__right.sticky {
-  height: 75px; // 65px plus some additional pixels, modify to your taste
-}
-
 
 
