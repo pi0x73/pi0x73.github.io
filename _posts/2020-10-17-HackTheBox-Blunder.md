@@ -106,3 +106,19 @@ After some time I find 2 interesting leads :
 - /todo.txt
 
 ![todo](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/todo.png)
+
+I finally have an username (**fergus**) provided from the todo leftover and the login page. This way I can take a look on the exploit now.
+
+### bruteforcing
+
+I firstly created a wordlist using **cewl** based on the blog provided from the port 80 :
+
+```sh
+root@kali:~# cewl http://10.10.10.191 -w wordlist.txt
+CeWL 5.4.8 (Inclusion) Robin Wood (robin@digi.ninja) (https://digi.ninja/)
+root@kali:~# ls -la wordlist.txt
+-rw-r--r-- 1 root root 2498 Oct 17 16:48 wordlist.txt
+```
+
+I then copied the script in the previous blog localy and changed the parameters to my needs :
+![exploit](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/exploit.png)
