@@ -107,6 +107,8 @@ After some time I find 2 interesting leads :
 
 ![todo](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/todo.png)
 
+## Initial Foothold
+
 I finally have an username (**fergus**) provided from the todo leftover and the login page. This way I can take a look on the exploit now.
 
 ### bruteforcing
@@ -122,3 +124,11 @@ root@kali:~# ls -la wordlist.txt
 
 I then copied the script in the previous blog localy and changed the parameters to my needs :
 ![exploit](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/exploit.png)
+
+Running the exploit I get some correct credentials after a while :
+![bf](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/bf.png)
+
+``fergus:RolandDeschain``
+Obviously I can use those creds to login on ``/admin`` and access the dashboard :
+
+![dashboard](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/blunder-writeup/dashboard.png)
