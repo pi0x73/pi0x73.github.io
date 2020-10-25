@@ -1,19 +1,19 @@
 ---
 title: "About Me"
 permalink: /about/
-layout : splash
+layout : signle
 author_profile : true
 ---
-## $whoami
+## ~# whoami
 student, security researcher, developer (C/C++ , Python), pentester , blogger.  
 usually participate in competitions and CTFs about cybersecurity.  
 I use this blog as a personal portfolio , archive my achievements and share blogs and walkthroughs that I find interesting.  
 
-## Profiles & References
+## ~# profiles && references
 HackTheBox [https://www.hackthebox.eu/profile/111862](https://www.hackthebox.eu/profile/111862)  
 Linkedin [https://www.linkedin.com/in/suljotgjoka/](https://www.linkedin.com/in/suljotgjoka/)  
 
-## $support 
+## ~# support
 This blog is created in partnership with 0 ads!  
 If you like my work I would be more than happy if you donated some bucks.  
 
