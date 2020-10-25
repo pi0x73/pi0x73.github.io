@@ -3,6 +3,9 @@ permalink: /about/
 layout : single
 author_profile : true
 ---
+
+
+
 ## ~# whoami
 student, security researcher, developer (C/C++ , Python), pentester , blogger.  
 usually participate in competitions and CTFs about cybersecurity.  
