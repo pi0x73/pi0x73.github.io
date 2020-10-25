@@ -1,7 +1,7 @@
 ---
 title: "About Me"
 permalink: /about/
-layout : signle
+layout : single
 author_profile : true
 ---
 ## ~# whoami
