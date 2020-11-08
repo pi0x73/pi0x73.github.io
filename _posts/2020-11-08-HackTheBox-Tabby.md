@@ -73,3 +73,33 @@ Nothing much interesting till here , but after I while clicking around I saw an 
 <li><a href="#about">About</a></li>
 <li><a href="#callus">Support</a></li>
 ```
+
+### file read
+
+It seems like all of the buttons redirect to nowhere but news button has an interesting link attached. 
+A php pagethat calls files from systemand shows them on the webpage so I though it was possible that we could achieve File Read from the remote host.
+
+![lfi](githuburl)
+
+Obviously the File Read injection was successfuland I am able to read files from the system through the vulnerability. 
+
+This could be a lot useful at the moment since we also noticed apache tomcat running on port 8080 , so I started looking around for the tomcat-users.xml file which holds the credentials configured for the administration panel.
+
+To make the searching easier I installed **tomcat9** on my attacker machine to see where it saves the config files.
+
+![tomcat9](githuburl)
+
+Using those definitive paths I could try to retrieve the config file from the remote system and see if there is any information inside it :
+
+```xml
+  <role rolename="tomcat"/>
+  <role rolename="role1"/>
+  <user username="tomcat" password="<must-be-changed>" roles="tomcat"/>
+  <user username="both" password="<must-be-changed>" roles="tomcat,role1"/>
+  <user username="role1" password="<must-be-changed>" roles="role1"/>
+
+   <role rolename="admin-gui"/>
+   <role rolename="manager-script"/>
+   <user username="tomcat" password="$3cureP4s5w0rd123!" roles="admin-gui,manager-script"/>
+</tomcat-users>
+```
