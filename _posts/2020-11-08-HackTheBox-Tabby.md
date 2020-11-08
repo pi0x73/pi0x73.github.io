@@ -12,7 +12,7 @@ header:
   actions:
     - label: "Learn More"
       url: "https://www.hackthebox.eu/home/machines/profile/259"
-  teaser: /assets/images/blunder-writeup/tabby.png
+  teaser: /assets/images/tabby-writeup/tabby.png
   teaser_home_page: true
   
 categories:
