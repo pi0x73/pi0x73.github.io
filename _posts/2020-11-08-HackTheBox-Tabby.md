@@ -25,3 +25,51 @@ tags:
 
 
 ## Enumeration
+
+### nmap
+As always we start by doing a nmap scan against the host (10.10.10.194) :
+
+```sh
+root@kali:/home/pi0x73# nmap -sC -sV -T4 10.10.10.194
+Starting Nmap 7.91 ( https://nmap.org ) at 2020-11-08 14:50 CET
+Nmap scan report for 10.10.10.194
+Host is up (0.087s latency).
+Not shown: 997 closed ports
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 45:3c:34:14:35:56:23:95:d6:83:4e:26:de:c6:5b:d9 (RSA)
+|   256 89:79:3a:9c:88:b0:5c:ce:4b:79:b1:02:23:4b:44:a6 (ECDSA)
+|_  256 1e:e7:b9:55:dd:25:8f:72:56:e8:8e:65:d5:19:b0:8d (ED25519)
+80/tcp   open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Mega Hosting
+8080/tcp open  http    Apache Tomcat
+|_http-open-proxy: Proxy might be redirecting requests
+|_http-title: Apache Tomcat
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.44 seconds
+```
+
+Some interesting information can be collected through the nmap scan where we see **Tomcat Apache** running on port 8080 , a web page on port 80 and a domain (megahosting.htb).
+
+First thing, I am going to add the domain to the hosts file and procced through the web page.
+
+We can do so by adding **megahosting.htb** under ip : 10.10.10.194 on **/etc/hosts** file on a new line.
+
+### web
+
+Procceding through the webpage, we are represented with a hosting platform service :
+
+![web](githuburl)
+
+Nothing much interesting till here , but after I while clicking around I saw an interesting piece of code in the page source : 
+
+```html
+<li><a href="#pricing">Infrastructure</a></li>
+<li><a href="http://megahosting.htb/news.php?file=statement">News</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#callus">Support</a></li>
+```
