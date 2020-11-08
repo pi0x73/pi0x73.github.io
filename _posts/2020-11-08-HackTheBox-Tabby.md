@@ -23,6 +23,12 @@ tags:
   - tomcat
 ---
 
+![card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/tabby.png)
+
+## Summary
+Tabby is an interesting easy box provided by hackthebox where We are represented with a file read vulnerability which we abuse to gain access into the tomcat manager.
+Using a classic exploit method , we are able to grab a low privileged shell.
+Cracking a zip file leads us to the user password which is part of the ``lxd`` group , thus we can abuse it to gain a system shell.
 
 ## Enumeration
 
