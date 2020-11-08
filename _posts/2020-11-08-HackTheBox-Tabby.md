@@ -53,7 +53,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 12.44 seconds
 ```
 
-Some interesting information can be collected through the nmap scan where we see **Tomcat Apache** running on port 8080 , a web page on port 80 and a domain : **megahosting.htb**.
+Some interesting information can be collected through the nmap scan where we see **Tomcat Apache** running on port 8080 , a web page on port 80 and a domain : **megahosting.htb**
 
 First thing, I am going to add the domain to the hosts file and procced through the web page.
 
@@ -104,7 +104,7 @@ Using those paths I was able to retrieve the config file from the remote system 
 
 We can easily see the credentials for tomcat running on 8080.
 
-However while trying to connect with the given credentials on http://10.10.10.194:8080/manager I noticed that the I could not access the GUI panel, so I started googling about possible other ways.
+However while trying to connect with the given credentials on [http://10.10.10.194:8080/manager](http://10.10.10.194:8080/manager) I noticed that the I could not access the GUI panel, so I started googling about possible other ways.
 
 After some time I came up with an interesting pip module : **tomcat-manager**, 
 which could help me use the panel through CLI .
@@ -128,7 +128,7 @@ tomcat-manager> connect http://10.10.10.194:8080/manager tomcat "$3cureP4s5w0rd1
 tomcat-manager> deploy local shell.war /zdf
 tomcat-manager>
 ```
-With the payload already uploaded to the web server , what's left to do is to navigate on [url](http://10.10.10.194:8080/zdf) in my case to triger the payload and recieve a reverse shell to my machine : 
+With the payload already uploaded to the web server , what's left to do is to navigate on [http://10.10.10.194:8080/zdf](http://10.10.10.194:8080/zdf) in my case to triger the payload and recieve a reverse shell to my machine : 
 
 ![tomcat-shell](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/tomcat-shell.png)
 
