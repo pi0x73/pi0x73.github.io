@@ -193,7 +193,7 @@ There was nothing useful inside the zip backup but I noticed that user **ash** u
 
 ## Privesc to root
 
-Now as seen above , while using ``id`` command , it pulls out interesting information where ``ash`` is a memeber of **lxd** group.
+Now as seen above , while using ``id`` command, it pulls out interesting information where ``ash`` is a memeber of **lxd** group.
 
 Members from this group can create and start containers to the machine.
 To sumarize that I am able to create a container , start it and then mount the machine filesystem to it.
