@@ -185,7 +185,7 @@ root@kali:~#
 
 There was nothing useful inside the zip backup but I noticed that user **ash** uses the same password as zip :
 
-![sudo](githuburl)
+![sudo](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/sudo.png)
 
 ## Privesc to root
 
@@ -196,5 +196,5 @@ To sumarize that I am able to create a container , start it and then mount the m
 
 To do that I downloaded **alpine** image to the machine which is preconfigured and initialized it :
 
-![lxd](githuburl)
+![lxd](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/lxd.png)
 
