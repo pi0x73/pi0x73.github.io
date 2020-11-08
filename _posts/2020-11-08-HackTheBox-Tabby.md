@@ -63,7 +63,7 @@ We can do so by adding **megahosting.htb** under ip : 10.10.10.194 on **/etc/hos
 
 Procceding through the webpage, we are represented with a hosting platform service :
 
-![web](githuburl)
+![web](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/tabby-web.png)
 
 Nothing much interesting till here , but after I while clicking around I saw an interesting piece of code in the page source : 
 
@@ -79,7 +79,7 @@ Nothing much interesting till here , but after I while clicking around I saw an 
 It seems like all of the buttons redirect to nowhere but news button has an interesting link attached. 
 A php pagethat calls files from systemand shows them on the webpage so I though it was possible that we could achieve File Read from the remote host.
 
-![lfi](githuburl)
+![lfi](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/lfi.png)
 
 Obviously the File Read injection was successfuland I am able to read files from the system through the vulnerability. 
 
@@ -87,7 +87,7 @@ This could be a lot useful at the moment since we also noticed apache tomcat run
 
 To make the searching easier I installed **tomcat9** on my attacker machine to see where it saves the config files.
 
-![tomcat9](githuburl)
+![tomcat9](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/tomcat9.png)
 
 Using those definitive paths I could try to retrieve the config file from the remote system and see if there is any information inside it :
 
