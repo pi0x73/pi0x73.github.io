@@ -110,7 +110,7 @@ However while trying to connect with the given credentials on http://10.10.10.19
 
 After some time I came up with an interesting pip module : **tomcat-manager** which could help me use the panel through CLI .
 
-![tomcatmgr](githuburl)
+![tomcatmgr](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/tomcatmgr.png)
 
 I found this module very helpful because not only I was able to connect to the tomcat manager service but I could also upload files through it.
 
@@ -129,6 +129,6 @@ tomcat-manager>
 ```
 With the payload already uploaded to the web server , what's left to do is to navigate on ``http://10.10.10.194:8080/zdf`` in my case to triger the payload and recieve a reverse shell to my machine : 
 
-![tomcat-shell](githuburl)
+![tomcat-shell](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/tabby-writeup/tomcat-shell.png)
 
 
