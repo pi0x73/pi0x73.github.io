@@ -59,9 +59,8 @@ The website represents somewhat of a fitness page with a login option.
 
 ![webpage](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/webpage.png)
 
-Clicking on **Contact** button reveals useful information.
-
-The website has been built using ``Gym Management Software 1.0`` :
+Clicking on **Contact** button reveals useful information.           
+The website has been built using ``Gym Management Software 1.0``
 
 ![contact](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/contact.png)
 
