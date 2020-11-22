@@ -25,6 +25,7 @@ tags:
   - CloudMe
 ---
 
+![card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/buff.png)
 
 ## Summary
 Buff is an easy Windows machine provided by egotisticalSW on hackthebox. 
@@ -60,7 +61,7 @@ The website represents somewhat of a fitness page with a login option.
 
 Clicking on **Contact** button reveals useful information.
 
-The website has been built using ***Gym Management Software 1.0*** :
+The website has been built using ``Gym Management Software 1.0`` :
 
 ![contact](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/contact.png)
 
@@ -70,7 +71,7 @@ While searching the software on **exploitdb** We find a RCE vulnerability ...
 
 ![exploitdb](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/exploitdb.png)
 
-I am going to use the 4th exploit which appears to be an ***Unauthenticated Remote Code Execution*** Vulnerability.
+I am going to use the 4th exploit which appears to be an ``Unauthenticated Remote Code Execution`` Vulnerability.
 
 ```sh
 root@kali:~# searchsploit -m /usr/share/exploitdb/exploits/php/webapps48506.py
@@ -102,6 +103,7 @@ I have gained an initial shell which is somewhat unstable and not very helpful f
 ```sh
 root@kali:/usr/share/windows-resources/binaries# python3 -m http.server 80
 ```
+
 Using python3 **http.server** I can host a copy of netcat.exe which is located on ``/usr/share/windows-binaries/nc.exe`` on any Kali host.
 
 On the remote machine I can use the following commands to download and execute netcat in order to give myself a reverse shell :
@@ -144,6 +146,7 @@ Again , searching the software on **exploitdb** for a possible vulnerability lea
 By the first view, it seems like a **Buffer Overflow** vulnerability laying on **CloudMe** which should probably be listening on a local port on the machine. 
 
 We can confirm that by executing this command :
+
 ```
 C:\Users\shaun\Downloads>netstat -an | findstr "LISTENING"
 
@@ -156,6 +159,7 @@ C:\Users\shaun\Downloads>netstat -an | findstr "LISTENING"
   TCP    [::]:445               [::]:0                 LISTENING
   [...]
 ```
+
 It appears that the vulnerable software is listening under port **8888** on ``localhost``. 
 
 ### Tunneling
