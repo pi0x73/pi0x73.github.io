@@ -65,7 +65,8 @@ evilginx-linux-amd64.tar.gz               100%[=================================
 pi0x73@evilginx2:~$ 
 ```
 
-Once the package has been download we can proceed by unpacking and running the installation script.   
+Once the package has been downloaded we can proceed by unpacking and running the installation script.   
+
 **golang** is a required package as well so I'm going to install that too :
 
 ```sh
