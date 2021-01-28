@@ -75,15 +75,15 @@ pi0x73@evilginx2:~/evilginx$ sudo bash install.sh
 ```
 After that we can simply fire it up by running ``sudo evilginx2`` anywhere on the terminal :
 
-![run](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx2.jpg)
+![run](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx2.png)
 
 Before firing up a phishing page **Evilginx** requires some additional setup such as setting our custom domain , our public ip etc... 
 
-![config](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx43.jpg)
+![config](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx43.png)
 
 These 3 entries appearing in the screen have to be added in the DNS config for our domain as shown in the following screenshot :
 
-![DNS](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx4.jpg)
+![DNS](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx4.png)
 
 The configuration should take somewhere to 15 minutes to apply in the domain. You can confirm the changes by running ``nslookup yourdomain`` in another terminal :
 
