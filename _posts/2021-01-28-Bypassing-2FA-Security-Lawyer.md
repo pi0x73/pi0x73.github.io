@@ -21,6 +21,9 @@ tags:
   - reverse-proxy
   - mitm-attack
 ---
+
+![card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/phishing.png)
+
 Phishing is yet the most used and popular technique day-to-day which has brought compromises from single user accounts to large companies.  
 
 While looking for suggestions , the most common recommendation given nowadays is to use the **two-factor-authentication** layer to defend from various phishing methods.   
