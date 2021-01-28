@@ -7,9 +7,9 @@ toc: true
 toc_sticky: true
 header:
   tagline: "A walkthrough demonstrating how secure 2FA is and how can it be bypassed."
-  overlay_image: /assets/images/background.jpg
+  overlay_image: /assets/images/2FA-Bypass/background.jpg
   overlay_filter: 0.5
-  teaser: /assets/images/buff-writeup/buff.png
+  teaser: /assets/images/2FA-Bypass/evilginx1.png
   teaser_home_page: true
   
 tags:  
