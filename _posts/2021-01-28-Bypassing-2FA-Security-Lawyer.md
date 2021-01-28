@@ -34,14 +34,15 @@ In this blog post we'll look on how **2FA** can be bypassed in an usual phishing
 ## What is 2FA? 
 Two-factor authentication or 2FA, is an electronic authentication method in which a computer user is granted access to a website or application only after successfully presenting two or more pieces of evidence (or factors) to an authentication mechanism: knowledge (something only the user knows), possession (something only the user has), and inherence (something only the user is).
 
+## Evilginx (Man in the middle attacking framework)
 
-By reading this short explaination about **two-factor-authentication** you would assume that the mechanisms used look secure and would make it almost impossible for a hacker to break through.  
+By reading the short explaination about **two-factor-authentication** above, you would assume that the mechanisms used look secure and would make it almost impossible for a hacker to break through.  
 
 However, bypassing this layer is possible by using **Evilginx2**, a Man in the Middle attack framework which is able to act as a reverse proxy and help the attacker get through verification steps.
 
 ![background](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx1.jpg)
 
-## Installation 
+### Installation 
 
 >*Note : in this part I am not going to cover setting up the VPS and domain but simply setting up the tool in a linux environiment and using it over a quick and short demo.*
 
@@ -61,7 +62,8 @@ evilginx-linux-amd64.tar.gz               100%[=================================
 pi0x73@evilginx2:~$ 
 ```
 
-Once the package has been download we can proceed by unpacking and running the installation script. **golang** is a required package as well so I'm going to install that too :
+Once the package has been download we can proceed by unpacking and running the installation script.   
+**golang** is a required package as well so I'm going to install that too :
 
 ```sh
 pi0x73@evilginx2:~$ sudo apt install golang
@@ -102,6 +104,7 @@ Non-authoritative answer:
 Name:   pi0x73.cf
 Address: 20.77.25.9
 ```
+### Demonstration
 
 When it's all set-up and looking good , you can fire a phishing page to be generated in your domain. (I used twitter)
 
