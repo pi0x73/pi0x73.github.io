@@ -33,4 +33,11 @@ Two-factor authentication or 2FA, is an electronic authentication method in whic
 
 
 By reading this short explaination about **two-factor-authentication** you would assume that the mechanisms used look secure and would make it almost impossible for a hacker to break through.  
-However, bypassing this layer is possible by using **Evilginx2**
+
+However, bypassing this layer is possible by using **Evilginx2**, a Man in the Middle attack framework which is able to act as a reverse proxy and help the attacker get through verification steps.
+
+![background](evilginx1)
+
+## Installation 
+
+>*Note : in this part I am not going to cover setting up the VPS and domain but simply setting up the tool in a linux environiment and using it over a quick and short demo.*
