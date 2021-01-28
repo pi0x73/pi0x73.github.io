@@ -77,6 +77,8 @@ After that we can simply fire it up by running ``sudo evilginx2`` anywhere on th
 
 ![run](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx2.png)
 
+### Configuring
+
 Before firing up a phishing page **Evilginx** requires some additional setup such as setting our custom domain , our public ip etc... 
 
 ![config](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx43.png)
@@ -99,6 +101,7 @@ Address: 20.77.25.9
 ```
 
 When it's all set-up and looking good , you can fire a phishing page to be generated in your domain. (I used twitter)
+
 ![phishlet](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx5.png)
 
 This **URL** is supposed to be sent to the target which in this case is myself.   
@@ -110,15 +113,16 @@ The phishing page looks just like the real one so I am going to treat it as an u
 ![2fac](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx7.png)
 
 Right as we notice here, I am still in the fake domain and asked for a 2 Factor Verification to login which is where the **2FA Bypassing** comes in play.  
+
 What **Evilginx** does here is acting like a middle-man between the user target and twitter. This means that the user first enters the credentials on the fake page, then **Evilginx** shows up and grabs the information to validate it on twitter login. Right after that twitter accepts the credentials and asks for a 2FA code. The tool once again sends these instructions to the target and does the same.
 
-![creds](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx100.png)
+![creds](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx1000.png)
 
 We can see the grabbed information above and you'd be thinking that there is no 2FA code in there.  
 2FA codes are usually one-time usage and it would still be useless to grab and try to reuse it if the target user has already used it to authenticate.  
 Instead of grabbing the pin code **Evilginx** grabs an authenticated session cookie after the user has completed the login process and this way all of the security checks are already completed.
 
-![cookie](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx101.png)
+![cookie](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx1001.png)
 
 I can import the above cookie in any browser using any simple cookie editor :
 
