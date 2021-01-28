@@ -129,8 +129,10 @@ What **Evilginx** does here is acting like a middle-man between the user target 
 ![creds](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx1000.png)
 
 We can see the grabbed information above and you'd be thinking that there is no 2FA code in there.  
+
 2FA codes are usually one-time usage and it would still be useless to grab and try to reuse it if the target user has already used it to authenticate.  
-Instead of grabbing the pin code **Evilginx** grabs an authenticated session cookie after the user has completed the login process and this way all of the security checks are already completed.
+
+Instead of grabbing the pin code, **Evilginx** grabs an authenticated session cookie after the user has completed the login process and this way all of the security checks are already completed.
 
 ![cookie](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx1001.png)
 
