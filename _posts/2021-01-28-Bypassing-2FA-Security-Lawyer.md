@@ -120,3 +120,12 @@ Instead of grabbing the pin code **Evilginx** grabs an authenticated session coo
 
 ![cookie](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx101.png)
 
+I can import the above cookie in any browser using any simple cookie editor :
+
+![import](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx10.png)
+
+After reloading , the browser automatically makes use of the cookie and logs the attacker in with no more security checks to pass.
+
+![creds](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx11.png)
+
+
