@@ -12,7 +12,7 @@ header:
   teaser: /assets/images/2FA-Bypass/evilginx1.png
   teaser_home_page: true
   
-categories
+categories:
   - red-teaming
   
 tags:  
