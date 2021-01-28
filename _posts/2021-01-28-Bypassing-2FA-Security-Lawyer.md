@@ -36,7 +36,7 @@ By reading this short explaination about **two-factor-authentication** you would
 
 However, bypassing this layer is possible by using **Evilginx2**, a Man in the Middle attack framework which is able to act as a reverse proxy and help the attacker get through verification steps.
 
-![background](evilginx1)
+![background](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx1.jpg)
 
 ## Installation 
 
@@ -75,15 +75,15 @@ pi0x73@evilginx2:~/evilginx$ sudo bash install.sh
 ```
 After that we can simply fire it up by running ``sudo evilginx2`` anywhere on the terminal :
 
-![run](evilginx2)
+![run](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx2.jpg)
 
 Before firing up a phishing page **Evilginx** requires some additional setup such as setting our custom domain , our public ip etc... 
 
-![config](evilginx3)
+![config](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx43.jpg)
 
 These 3 entries appearing in the screen have to be added in the DNS config for our domain as shown in the following screenshot :
 
-![DNS](evilginx4)
+![DNS](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx4.jpg)
 
 The configuration should take somewhere to 15 minutes to apply in the domain. You can confirm the changes by running ``nslookup yourdomain`` in another terminal :
 
