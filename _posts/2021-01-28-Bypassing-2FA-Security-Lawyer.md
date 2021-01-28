@@ -109,3 +109,8 @@ The phishing page looks just like the real one so I am going to treat it as an u
 
 ![2fac](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx7.png)
 
+Right as we notice here, I am still in the fake domain and asked for a 2 Factor Verification to login which is where the **2FA Bypassing** comes in play.  
+What **Evilginx** does here is acting like a middle-man between the user target and twitter. This means that the user first enters the credentials on the fake page, then **Evilginx** shows up and grabs the information to validate it on twitter login. Right after that twitter accepts the credentials and asks for a 2FA code. The tool once again sends these instructions to the target and does the same.
+
+![creds](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx100.png)
+
