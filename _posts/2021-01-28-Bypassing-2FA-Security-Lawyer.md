@@ -104,3 +104,8 @@ When it's all set-up and looking good , you can fire a phishing page to be gener
 This **URL** is supposed to be sent to the target which in this case is myself.   
 
 ![template](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx6.png)
+
+The phishing page looks just like the real one so I am going to treat it as an user who is right about to get compromised. I entered my credentials on it and clicked **Login**
+
+![2fac](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx7.png)
+
