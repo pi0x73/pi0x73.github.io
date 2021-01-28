@@ -128,4 +128,9 @@ After reloading , the browser automatically makes use of the cookie and logs the
 
 ![creds](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/2FA-Bypass/evilginx11.png)
 
+And thats it. I have just pwned myself while bypassing 2FA.
 
+## Conclusions
+Two factor authentication is still a very good protection layer for usual accounts. The conclusions we can take out of this can be that no matter if you have added 2 or 3 more security checks to your accounts, if you are careless on where you click or where you put information then you'll still get hacked.
+
+>*DISCLAIMER : This blog is just an educative walkthrough to show what an attacker can do and how red-teamers can use Evilginx to get through secured accounts on authorised environiments. Attacking someone else with no mutual consent is illegal and may put you in risk.*
