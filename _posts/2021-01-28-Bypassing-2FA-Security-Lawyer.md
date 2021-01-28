@@ -22,8 +22,11 @@ tags:
   - mitm-attack
 ---
 Phishing is yet the most used and popular technique day-to-day which has brought compromises from single user accounts to large companies.  
+
 While looking for suggestions , the most common recommendation given nowadays is to use the **two-factor-authentication** layer to defend from various phishing methods.   
+
 But how secure is **2FA** itself?  
+
 In this blog post we'll look on how **2FA** can be bypassed in an usual phishing situation and how to set-up [Evilginx2](https://github.com/kgretzky/evilginx2)
 
 ## Required Stuff
