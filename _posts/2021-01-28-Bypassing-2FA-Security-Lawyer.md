@@ -26,3 +26,6 @@ In this blog post we'll look on how **2FA** can be bypassed in an usual phishing
 - a custom domain that you control
 - a VPS (Virtual Private Server)
 - Evilginx2
+
+## What is 2FA? 
+Two-factor authentication or 2FA, is an electronic authentication method in which a computer user is granted access to a website or application only after successfully presenting two or more pieces of evidence (or factors) to an authentication mechanism: knowledge (something only the user knows), possession (something only the user has), and inherence (something only the user is).
